@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="岡田印刷へのお問い合わせ。印刷・デザイン・地域資源活用・生成AI支援など、お気軽にご相談ください。">
+  <title>お問い合わせ | 岡田印刷</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo nav__logo--img">
+      <img src="images/logo.png" alt="株式会社岡田印刷" class="nav__logo-img">
+    </a>
+    <div class="nav__menu">
+      <a href="about.html" class="nav__link">私たちについて</a>
+      <a href="services.html" class="nav__link">事業案内</a>
+      <a href="projects.html" class="nav__link">取り組み</a>
+      <a href="company.html" class="nav__link">会社案内</a>
+      <a href="news.html" class="nav__link">お知らせ</a>
+      <a href="access.html" class="nav__link">アクセス</a>
+      <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
+    </div>
+    <button class="nav__hamburger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile-menu">
+    <a href="about.html" class="nav__mobile-link">私たちについて</a>
+    <a href="services.html" class="nav__mobile-link">事業案内</a>
+    <a href="projects.html" class="nav__mobile-link">取り組み・プロジェクト</a>
+    <a href="company.html" class="nav__mobile-link">会社案内</a>
+    <a href="news.html" class="nav__mobile-link">お知らせ</a>
+    <a href="access.html" class="nav__mobile-link">アクセス</a>
+    <a href="contact.html" class="nav__mobile-link">お問い合わせ</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header__bg"></div>
+  <div class="container" style="position:relative">
+    <span class="page-header__label">CONTACT</span>
+    <h1 class="page-header__title">お問い合わせ</h1>
+    <p class="page-header__copy">まずは、お気軽にご相談ください。</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb__inner">
+      <span class="breadcrumb__item"><a href="index.html">TOP</a></span>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item">お問い合わせ</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Intro -->
+    <div class="text-center reveal" style="max-width:600px;margin:0 auto 4rem">
+      <p style="color:var(--text-secondary);line-height:2">
+        印刷物のご相談から、地域資源の活用、生成AI導入支援まで。<br>
+        どんな小さなご相談でもお気軽にどうぞ。<br>
+        お見積もりは無料です。<br>
+        担当者より2〜3営業日以内にご連絡いたします。
+      </p>
+      <div style="margin-top:1.5rem;padding:1.25rem;background:var(--off-white);border:1px solid var(--border);font-size:0.9rem;color:var(--text-secondary)">
+        お急ぎの方はお電話でもどうぞ。<br>
+        <a href="tel:0564217151" style="font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:0.05em">0564-21-7151</a>
+        <span style="font-size:0.8rem;display:block;margin-top:0.25rem">受付時間：月〜金 8:30〜17:30</span>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-wrapper reveal">
+      <form class="contact-form" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">
+              お名前<span class="form-required">必須</span>
+            </label>
+            <input type="text" class="form-input" placeholder="山田 太郎" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              フリガナ<span class="form-required">必須</span>
+            </label>
+            <input type="text" class="form-input" placeholder="ヤマダ タロウ" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            会社名・団体名<span class="form-optional">任意</span>
+          </label>
+          <input type="text" class="form-input" placeholder="株式会社〇〇" autocomplete="organization">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">
+              メールアドレス<span class="form-required">必須</span>
+            </label>
+            <input type="email" class="form-input" placeholder="example@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">
+              電話番号<span class="form-required">必須</span>
+            </label>
+            <input type="tel" class="form-input" placeholder="0564-00-0000" required autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            お問い合わせ種別<span class="form-required">必須</span>
+          </label>
+          <select class="form-select" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="print">印刷物について（チラシ・パンフレット・名刺など）</option>
+            <option value="design">デザイン・販促物について</option>
+            <option value="local">地域資源ブランド化について</option>
+            <option value="miso">八丁味噌紙・地元の銘紙について</option>
+            <option value="ai">生成AI活用支援について</option>
+            <option value="other">採用・その他</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            ご相談内容<span class="form-required">必須</span>
+          </label>
+          <textarea class="form-textarea" placeholder="ご相談内容をできるだけ詳しくお書きください。&#10;（例：チラシを100枚作りたい、生成AIの社内研修を依頼したい　など）" required rows="6"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            添付ファイル<span class="form-optional">任意</span>
+          </label>
+          <input type="file" class="form-input" style="padding:0.6rem 1rem;cursor:pointer" accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg">
+          <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.4rem">PDF・Word・Excel・画像ファイル（10MB以内）</p>
+        </div>
+
+        <div style="margin:1.5rem 0;padding:1.25rem;background:var(--off-white);border:1px solid var(--border);font-size:0.82rem;color:var(--text-secondary);line-height:1.9">
+          送信前に<a href="privacy.html" style="color:var(--navy-mid);text-decoration:underline">プライバシーポリシー</a>をご確認ください。送信をもってプライバシーポリシーに同意したものとみなします。
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn--primary" style="font-size:1rem;padding:1rem 3rem;min-width:240px">
+            送信する
+          </button>
+          <p class="form-note">※ 担当者より2〜3営業日以内にご連絡いたします。</p>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div><div class="footer__brand-name">岡田印刷</div><div class="footer__brand-copy">価値を、かたどる。</div><p class="footer__brand-text">愛知県岡崎市板屋町2番地<br>TEL: 0564-21-7151</p></div>
+      <div><div class="footer__heading">事業案内</div><div class="footer__links"><a href="pages/services/communication.html" class="footer__link">コミュニケーションデザイン</a><a href="pages/services/local-brand.html" class="footer__link">地域資源ブランド化</a><a href="pages/services/ai-support.html" class="footer__link">生成AI活用支援</a></div></div>
+      <div><div class="footer__heading">会社情報</div><div class="footer__links"><a href="about.html" class="footer__link">私たちについて</a><a href="company.html" class="footer__link">会社概要</a><a href="pages/history.html" class="footer__link">沿革</a><a href="pages/calendar.html" class="footer__link">年間休日カレンダー</a></div></div>
+      <div><div class="footer__heading">サイト</div><div class="footer__links"><a href="news.html" class="footer__link">お知らせ</a><a href="access.html" class="footer__link">アクセス</a><a href="contact.html" class="footer__link">お問い合わせ</a><a href="privacy.html" class="footer__link">プライバシーポリシー</a></div></div>
+    </div>
+    <div class="footer__bottom"><div class="footer__copy">&copy; 2026 株式会社岡田印刷 All Rights Reserved.</div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

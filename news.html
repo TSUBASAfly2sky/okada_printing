@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="岡田印刷からのお知らせ。新サービス・休業案内・プロジェクト情報などをお届けします。">
+  <title>お知らせ | 岡田印刷</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .news-filter { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2rem; }
+    .news-filter__btn { padding:0.45rem 1.1rem; font-size:0.8rem; border:1px solid var(--border); background:var(--white); color:var(--text-secondary); cursor:pointer; transition:all 0.3s; letter-spacing:0.05em; font-family:var(--font-sans); }
+    .news-filter__btn:hover, .news-filter__btn.active { background:var(--navy); color:var(--white); border-color:var(--navy); }
+    .news-card { padding:2rem; border:1px solid var(--border); margin-bottom:1rem; transition:all 0.3s; display:block; }
+    .news-card:hover { background:var(--off-white); border-color:var(--navy-mid); }
+    .news-card__meta { display:flex; gap:1rem; align-items:center; margin-bottom:0.75rem; }
+    .news-card__date { font-size:0.82rem; color:var(--text-secondary); }
+    .news-card__cat { font-size:0.68rem; padding:0.2rem 0.7rem; border:1px solid var(--border); color:var(--text-secondary); letter-spacing:0.08em; }
+    .news-card__title { font-size:0.95rem; color:var(--text-primary); font-weight:600; margin-bottom:0.5rem; }
+    .news-card__body { font-size:0.85rem; color:var(--text-secondary); line-height:1.8; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo nav__logo--img">
+      <img src="images/logo.png" alt="株式会社岡田印刷" class="nav__logo-img">
+    </a>
+    <div class="nav__menu">
+      <a href="about.html" class="nav__link">私たちについて</a>
+      <a href="services.html" class="nav__link">事業案内</a>
+      <a href="projects.html" class="nav__link">取り組み</a>
+      <a href="company.html" class="nav__link">会社案内</a>
+      <a href="news.html" class="nav__link">お知らせ</a>
+      <a href="access.html" class="nav__link">アクセス</a>
+      <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
+    </div>
+    <button class="nav__hamburger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile-menu">
+    <a href="about.html" class="nav__mobile-link">私たちについて</a>
+    <a href="services.html" class="nav__mobile-link">事業案内</a>
+    <a href="projects.html" class="nav__mobile-link">取り組み・プロジェクト</a>
+    <a href="company.html" class="nav__mobile-link">会社案内</a>
+    <a href="news.html" class="nav__mobile-link">お知らせ</a>
+    <a href="access.html" class="nav__mobile-link">アクセス</a>
+    <a href="contact.html" class="nav__mobile-link">お問い合わせ</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header__bg"></div>
+  <div class="container" style="position:relative">
+    <span class="page-header__label">NEWS</span>
+    <h1 class="page-header__title">お知らせ</h1>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb__inner">
+      <span class="breadcrumb__item"><a href="index.html">TOP</a></span>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item">お知らせ</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container" style="max-width:860px">
+
+    <div class="news-filter" role="group" aria-label="カテゴリフィルター">
+      <button class="news-filter__btn active" data-cat="all">すべて</button>
+      <button class="news-filter__btn" data-cat="news">お知らせ</button>
+      <button class="news-filter__btn" data-cat="holiday">休業案内</button>
+      <button class="news-filter__btn" data-cat="service">事業情報</button>
+      <button class="news-filter__btn" data-cat="project">プロジェクト</button>
+    </div>
+
+    <a href="#" class="news-card reveal" data-cat="news">
+      <div class="news-card__meta">
+        <span class="news-card__date">2026.05.20</span>
+        <span class="news-card__cat">お知らせ</span>
+      </div>
+      <div class="news-card__title">ホームページをリニューアルいたしました</div>
+      <div class="news-card__body">「価値を、かたどる。」をコンセプトに、岡田印刷の新しいホームページが完成しました。3つの事業をより分かりやすくご紹介しています。</div>
+    </a>
+
+    <a href="#" class="news-card reveal" data-cat="holiday">
+      <div class="news-card__meta">
+        <span class="news-card__date">2026.04.25</span>
+        <span class="news-card__cat">休業案内</span>
+      </div>
+      <div class="news-card__title">2026年 ゴールデンウィーク期間中の休業について</div>
+      <div class="news-card__body">2026年4月29日（水）〜5月6日（水）の期間、休業とさせていただきます。ご不便をおかけしますが、何卒よろしくお願いいたします。</div>
+    </a>
+
+    <a href="#" class="news-card reveal" data-cat="service">
+      <div class="news-card__meta">
+        <span class="news-card__date">2026.03.15</span>
+        <span class="news-card__cat">事業情報</span>
+      </div>
+      <div class="news-card__title">生成AI活用支援セミナーの開催について（岡崎市内企業向け）</div>
+      <div class="news-card__body">2026年4月より、岡崎市内の中小企業様向けに生成AI活用支援セミナーを定期開催いたします。初心者の方でも安心してご参加いただける内容です。</div>
+    </a>
+
+    <a href="#" class="news-card reveal" data-cat="project">
+      <div class="news-card__meta">
+        <span class="news-card__date">2026.02.10</span>
+        <span class="news-card__cat">プロジェクト</span>
+      </div>
+      <div class="news-card__title">地元の銘紙プロジェクト、新たな連携先との取り組みを開始</div>
+      <div class="news-card__body">地元の銘紙プロジェクトの一環として、新たな地域素材を活用した紙の開発を開始しました。詳細は追って報告いたします。</div>
+    </a>
+
+    <a href="#" class="news-card reveal" data-cat="holiday">
+      <div class="news-card__meta">
+        <span class="news-card__date">2025.12.20</span>
+        <span class="news-card__cat">休業案内</span>
+      </div>
+      <div class="news-card__title">年末年始休業のお知らせ</div>
+      <div class="news-card__body">2025年12月29日（月）〜2026年1月4日（日）の期間、年末年始の休業とさせていただきます。</div>
+    </a>
+
+    <a href="#" class="news-card reveal" data-cat="service">
+      <div class="news-card__meta">
+        <span class="news-card__date">2025.10.01</span>
+        <span class="news-card__cat">事業情報</span>
+      </div>
+      <div class="news-card__title">生成AI活用支援事業を正式スタートしました</div>
+      <div class="news-card__body">中小企業・各種団体様向けの生成AI活用支援事業を正式に開始しました。セミナー・研修・導入支援など、幅広くご対応いたします。</div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div><div class="footer__brand-name">岡田印刷</div><div class="footer__brand-copy">価値を、かたどる。</div><p class="footer__brand-text">愛知県岡崎市板屋町2番地<br>TEL: 0564-21-7151</p></div>
+      <div><div class="footer__heading">事業案内</div><div class="footer__links"><a href="pages/services/communication.html" class="footer__link">コミュニケーションデザイン</a><a href="pages/services/local-brand.html" class="footer__link">地域資源ブランド化</a><a href="pages/services/ai-support.html" class="footer__link">生成AI活用支援</a></div></div>
+      <div><div class="footer__heading">会社情報</div><div class="footer__links"><a href="about.html" class="footer__link">私たちについて</a><a href="company.html" class="footer__link">会社概要</a><a href="pages/history.html" class="footer__link">沿革</a><a href="pages/calendar.html" class="footer__link">年間休日カレンダー</a></div></div>
+      <div><div class="footer__heading">サイト</div><div class="footer__links"><a href="news.html" class="footer__link">お知らせ</a><a href="access.html" class="footer__link">アクセス</a><a href="contact.html" class="footer__link">お問い合わせ</a><a href="privacy.html" class="footer__link">プライバシーポリシー</a></div></div>
+    </div>
+    <div class="footer__bottom"><div class="footer__copy">&copy; 2026 株式会社岡田印刷 All Rights Reserved.</div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

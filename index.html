@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="岡田印刷は、印刷を原点に、企業の想い・地域の物語・情報と知恵を人に届く形へとかたどる会社です。愛知県岡崎市。">
+  <title>価値を、かたどる。| 岡田印刷</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══ Navigation ═══════════════════ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo nav__logo--img">
+      <img src="images/logo.png" alt="株式会社岡田印刷" class="nav__logo-img">
+    </a>
+    <div class="nav__menu">
+      <a href="about.html" class="nav__link">私たちについて</a>
+      <a href="services.html" class="nav__link">事業案内</a>
+      <a href="projects.html" class="nav__link">取り組み</a>
+      <a href="company.html" class="nav__link">会社案内</a>
+      <a href="news.html" class="nav__link">お知らせ</a>
+      <a href="access.html" class="nav__link">アクセス</a>
+      <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
+    </div>
+    <button class="nav__hamburger" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile-menu">
+    <a href="about.html" class="nav__mobile-link">私たちについて</a>
+    <a href="services.html" class="nav__mobile-link">事業案内</a>
+    <a href="projects.html" class="nav__mobile-link">取り組み・プロジェクト</a>
+    <a href="company.html" class="nav__mobile-link">会社案内</a>
+    <a href="news.html" class="nav__mobile-link">お知らせ</a>
+    <a href="access.html" class="nav__mobile-link">アクセス</a>
+    <a href="contact.html" class="nav__mobile-link">お問い合わせ</a>
+  </div>
+</nav>
+
+<!-- ══ HERO (V3 - illustration as background) ═══════════════════════════ -->
+<section class="hero-v3">
+  <div class="hero-v3__noise"></div>
+  <div class="hero-v3__dots"></div>
+
+  <!-- Background illustration -->
+  <div class="hero-v3__bg-illust" aria-hidden="true">
+    <img src="images/hero_main.png" alt="" class="parallax-element" data-parallax="-0.08">
+  </div>
+
+  <!-- White veil for readability -->
+  <div class="hero-v3__veil"></div>
+
+  <div class="hero-v3__inner">
+    <span class="hero-v3__tag">
+      OKADA PRINTING / SINCE 1917
+    </span>
+
+    <h1 class="hero-v3__title">
+      <span data-split>価値を、</span><span class="accent" data-split>かたどる</span>
+    </h1>
+
+    <p class="hero-v3__lead">
+      印刷を原点として、<strong>地域の物語</strong>、<strong>企業の想い</strong>、<strong>情報と知恵</strong>を、人に届く形へ。<br>
+      岡田印刷は、紙・デザイン・テクノロジーを通じて、<br>
+      まだ見えていない価値を<em class="lead-accent">かたどる</em>会社です。
+    </p>
+
+    <div class="hero-v3__actions">
+      <a href="services.html" class="btn-arrow">
+        <span>事業案内を見る</span>
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M11 1l6 6m0 0l-6 6m6-6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="contact.html" class="btn-text">
+        <span>相談する</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+
+    <!-- 3-service floating tags -->
+    <div class="hero-v3__tags" style="margin-top:2.5rem">
+      <a href="pages/services/communication.html" class="hero-v3__floating-tag">
+        <span class="hero-v3__floating-tag-dot" style="background:var(--navy)"></span>
+        <span class="hero-v3__floating-tag-text">
+          <span class="hero-v3__floating-tag-copy">企業の想いを、かたどる。</span>
+          <span class="hero-v3__floating-tag-sub">コミュニケーションデザイン事業</span>
+        </span>
+      </a>
+      <a href="pages/services/local-brand.html" class="hero-v3__floating-tag">
+        <span class="hero-v3__floating-tag-dot" style="background:var(--muted-green)"></span>
+        <span class="hero-v3__floating-tag-text">
+          <span class="hero-v3__floating-tag-copy">地域の物語を、かたどる。</span>
+          <span class="hero-v3__floating-tag-sub">地域資源ブランド化事業</span>
+        </span>
+      </a>
+      <a href="pages/services/ai-support.html" class="hero-v3__floating-tag">
+        <span class="hero-v3__floating-tag-dot" style="background:var(--warm-gold)"></span>
+        <span class="hero-v3__floating-tag-text">
+          <span class="hero-v3__floating-tag-copy">情報と知恵を、かたどる。</span>
+          <span class="hero-v3__floating-tag-sub">生成AI活用支援事業</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" style="color:var(--navy);opacity:0.5;bottom:1.5rem">
+    <span>SCROLL</span>
+    <div class="scroll-indicator__line" style="background:linear-gradient(to bottom, var(--navy), transparent)"></div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE ═══════════════════ -->
+<div class="marquee">
+  <div class="marquee__track">
+    <a href="pages/services/communication.html" class="marquee__item marquee__item--link">企業の想いを、かたどる。<span class="marquee__dot"></span></a>
+    <a href="pages/services/local-brand.html" class="marquee__item marquee__item--link">地域の物語を、かたどる。<span class="marquee__dot"></span></a>
+    <a href="pages/services/ai-support.html" class="marquee__item marquee__item--link">情報と知恵を、かたどる。<span class="marquee__dot"></span></a>
+    <!-- duplicate for seamless loop -->
+    <a href="pages/services/communication.html" class="marquee__item marquee__item--link">企業の想いを、かたどる。<span class="marquee__dot"></span></a>
+    <a href="pages/services/local-brand.html" class="marquee__item marquee__item--link">地域の物語を、かたどる。<span class="marquee__dot"></span></a>
+    <a href="pages/services/ai-support.html" class="marquee__item marquee__item--link">情報と知恵を、かたどる。<span class="marquee__dot"></span></a>
+  </div>
+</div>
+
+<!-- ══ STORY: Printing through ages ═══════ -->
+<section class="story">
+  <div class="story__bg-text">KATADORU</div>
+  <div class="container story__inner">
+    <div class="story__head reveal">
+      <span class="section-label">OUR STORY</span>
+      <h2 class="section-title">印刷の価値を、未来へつなぐ。</h2>
+      <div class="divider divider--center"></div>
+      <p class="section-subtitle" style="margin:0 auto">
+        形や媒体を変えて人々に情報を伝え続けてきた印刷技術。<br>
+        時代とともに変わる「届け方」を、岡田印刷は<em class="lead-accent">かたどり</em>続けてきました。
+      </p>
+    </div>
+
+    <div class="story__grid">
+      <div class="story__line"></div>
+
+      <div class="story__step reveal">
+        <div class="story__step-img">
+          <img src="images/kappan_print_navy_transparent.png" alt="活版印刷">
+        </div>
+        <div class="story__step-era">CHAPTER 01</div>
+        <h3 class="story__step-title">
+          活版印刷
+          <span class="story__step-subtitle">印刷黎明期</span>
+        </h3>
+        <p class="story__step-text">一文字ずつ拾い、紙に刻む。<br>情報を人に届ける手段が、<br>ここから始まりました。</p>
+      </div>
+
+      <div class="story__step reveal reveal-delay-1">
+        <div class="story__step-img">
+          <img src="images/offset_printer_navy_transparent.png" alt="オフセット印刷機">
+        </div>
+        <div class="story__step-era">CHAPTER 02</div>
+        <h3 class="story__step-title">
+          オフセット印刷機
+          <span class="story__step-subtitle">大量印刷の時代</span>
+        </h3>
+        <p class="story__step-text">機械が紙に色を載せる。<br>新聞、書籍、ポスター。<br>情報が一気に広がりました。</p>
+      </div>
+
+      <div class="story__step reveal reveal-delay-2">
+        <div class="story__step-img">
+          <img src="images/copy_machine_navy_transparent.png" alt="オンデマンド機">
+        </div>
+        <div class="story__step-era">CHAPTER 03 / now</div>
+        <h3 class="story__step-title">
+          オンデマンド機
+          <span class="story__step-subtitle">個別化、付加価値の創出</span>
+        </h3>
+        <p class="story__step-text">きめ細やかな印刷、少部数対応へ。<br>一人ひとりに合わせた「届け方」が可能に。</p>
+      </div>
+
+      <div class="story__step reveal reveal-delay-3">
+        <div class="story__step-img">
+          <img src="images/PC_navy_transparent.png" alt="生成AI">
+        </div>
+        <div class="story__step-era">CHAPTER 04 / now</div>
+        <h3 class="story__step-title">
+          生成AI
+          <span class="story__step-subtitle">超情報化社会の到来</span>
+        </h3>
+        <p class="story__step-text">新たな次元に突入した情報技術。<br>岡田印刷は、今、ここに立っています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES (Creative cards) ═══════ -->
+<section class="section section--gray services-section">
+  <div class="services-section__bg-text" aria-hidden="true">KATADORU</div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="text-center reveal">
+      <span class="section-label">OUR SERVICES</span>
+      <h2 class="section-title">3つの事業で、価値をかたどる。</h2>
+      <div class="divider divider--center"></div>
+      <p class="section-subtitle" style="margin:0 auto">
+        印刷を原点に派生した3つの事業領域。<br>
+        それぞれが「価値をかたどる」という同じ理念で結ばれています。
+      </p>
+    </div>
+
+    <div class="service-grid-v2">
+      <a href="pages/services/communication.html" class="svc-card reveal">
+        <div class="svc-card__num">Communication Design</div>
+        <div class="svc-card__img">
+          <img src="images/svc_communication.png" alt="">
+        </div>
+        <h3 class="svc-card__copy">企業の想いを、<br><em class="lead-accent">かたどる</em>。</h3>
+        <div class="svc-card__label">コミュニケーションデザイン事業</div>
+        <p class="svc-card__text">チラシ、ポスター、パンフレット、名刺、各種冊子、記念誌、販促物まで。企業や各種団体の伝えたい価値を紙で形にします。</p>
+        <span class="svc-card__btn">
+          <span>詳しく見る</span>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M11 1l6 6m0 0l-6 6m6-6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="pages/services/local-brand.html" class="svc-card reveal reveal-delay-1">
+        <div class="svc-card__num">Local Brand Paper</div>
+        <div class="svc-card__img">
+          <img src="images/svc_local_brand.png" alt="">
+        </div>
+        <h3 class="svc-card__copy">地域の物語を、<br><em class="lead-accent">かたどる</em>。</h3>
+        <div class="svc-card__label">地域資源ブランド化事業</div>
+        <p class="svc-card__text">地域素材や加工残渣を紙へアップサイクル。八丁味噌紙など、地域の物語を纏った紙を作ります。</p>
+        <span class="svc-card__btn">
+          <span>詳しく見る</span>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M11 1l6 6m0 0l-6 6m6-6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+
+      <a href="pages/services/ai-support.html" class="svc-card reveal reveal-delay-2">
+        <div class="svc-card__num">AI Support</div>
+        <div class="svc-card__img">
+          <img src="images/svc_ai_support.png" alt="">
+        </div>
+        <h3 class="svc-card__copy">情報と知恵を、<br><em class="lead-accent">かたどる</em>。</h3>
+        <div class="svc-card__label">生成AI活用支援事業</div>
+        <p class="svc-card__text">生成AIを実務で使うための研修・導入支援・業務改善。情報整理から発信まで設計します。</p>
+        <span class="svc-card__btn">
+          <span>詳しく見る</span>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M11 1l6 6m0 0l-6 6m6-6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HERITAGE (Okazaki) ═══════ -->
+<section class="heritage heritage--photo">
+  <div class="heritage__photo-bg" aria-hidden="true">
+    <img src="images/okazaki_castle_photo.jpg" alt="">
+  </div>
+  <div class="heritage__photo-overlay"></div>
+  <div class="heritage__stars"></div>
+
+  <div class="container heritage__inner-v2">
+
+    <div class="heritage__head reveal">
+      <span class="section-label" style="color:var(--warm-gold)">OUR ROOTS / OKAZAKI</span>
+      <h2 class="heritage__title">岡崎で培ったものづくりを、全国へ。</h2>
+      <div class="divider divider--center" style="background:var(--warm-gold)"></div>
+    </div>
+
+    <div class="heritage__cols reveal reveal-delay-1">
+      <div class="heritage__col">
+        <div class="heritage__years-inline">100 <span class="heritage__years-unit">Years</span></div>
+        <p class="heritage__lead">
+          徳川家康公生誕乃地・岡崎市<br>
+          八丁味噌、三河木綿、石材——<br>
+          脈々と続く地域のものづくりの中で、<br>
+          岡田印刷は1917年に創業しました。
+        </p>
+      </div>
+      <div class="heritage__col">
+        <p class="heritage__lead">
+          地域の企業や人々と歩んできた100年以上の時間が、私たちの誇りです。<em class="lead-accent">かたどり</em>続けてきた経験を、次の100年で全国の地域へと広げていきます。
+        </p>
+        <a href="about.html" class="btn-arrow" style="background:var(--warm-gold);margin-top:1.5rem">
+          <span>私たちについて</span>
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none"><path d="M11 1l6 6m0 0l-6 6m6-6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ═══════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center reveal" style="margin-bottom:3rem">
+      <span class="section-label">PROJECTS</span>
+      <h2 class="section-title">取り組み・プロジェクト</h2>
+      <div class="divider divider--center"></div>
+    </div>
+
+    <div class="projects-grid" style="margin-top:2rem">
+      <div class="project-card">
+        <span class="project-card__tag">FEATURED</span>
+        <h3 class="project-card__title">地元の銘紙プロジェクト</h3>
+        <p class="project-card__text">
+          地域の素材や加工残渣を活かし、地域の物語を纏った紙を作るプロジェクト。八丁味噌粕から生まれた紙が、名刺やパッケージとして地域を彩ります。
+        </p>
+        <a href="projects.html" class="project-card__link">取り組みを見る &rarr;</a>
+      </div>
+
+      <a href="https://hatcho-miso-paper.jp/" target="_blank" rel="noopener noreferrer" class="project-card project-card--miso">
+        <div class="project-card__bg" aria-hidden="true">
+          <img src="images/hatcho_miso_card.jpeg" alt="">
+        </div>
+        <div class="project-card__overlay" aria-hidden="true"></div>
+        <div class="project-card__content">
+          <span class="project-card__tag">EXTERNAL LINK</span>
+          <h3 class="project-card__title">
+            <img src="images/hatcho_miso_icon.png" alt="" class="project-card__icon" onerror="this.style.display='none'">
+            八丁味噌紙
+          </h3>
+          <p class="project-card__text">
+            岡崎が誇る名産品「八丁味噌」の製造過程で生まれ、商品規格に乗らない"蓋味噌"をアップサイクル活用した地域ブランド紙。地域資源ブランド化事業のトップランナーです。
+          </p>
+          <span class="project-card__link">八丁味噌紙サイトへ（外部リンク） &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEWS ═══════ -->
+<section class="section section--gray">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:0.5rem" class="reveal">
+      <div>
+        <span class="section-label">NEWS</span>
+        <h2 class="section-title mb-0">お知らせ</h2>
+      </div>
+      <a href="news.html" class="btn--ghost btn" style="font-size:0.82rem;padding:0.6rem 1.2rem">一覧を見る</a>
+    </div>
+
+    <div class="news-list">
+      <a href="news.html" class="news-item" data-cat="news">
+        <span class="news-item__date">2026.05.20</span>
+        <span class="news-item__tag">お知らせ</span>
+        <span class="news-item__title">ホームページをリニューアルいたしました</span>
+      </a>
+      <a href="news.html" class="news-item" data-cat="holiday">
+        <span class="news-item__date">2026.04.25</span>
+        <span class="news-item__tag">休業案内</span>
+        <span class="news-item__title">2026年 ゴールデンウィーク期間中の休業について</span>
+      </a>
+      <a href="news.html" class="news-item" data-cat="service">
+        <span class="news-item__date">2026.03.15</span>
+        <span class="news-item__tag">事業情報</span>
+        <span class="news-item__title">生成AI活用支援セミナーの開催について（岡崎市内企業向け）</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ═══════ -->
+<section class="cta">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--warm-gold);display:block;margin-bottom:1rem">CONTACT</span>
+      <h2 class="cta__title">まずは、お気軽にご相談ください。</h2>
+      <p class="cta__text">
+        印刷物のご相談から、地域資源の活用、生成AI導入まで。<br>
+        岡田印刷は、あなたの想いを<em class="lead-accent">かたどり</em>ます。
+      </p>
+      <div class="cta__actions">
+        <a href="contact.html" class="btn btn--primary">お問い合わせ・相談する</a>
+        <a href="tel:0564217151" class="btn btn--outline">&#128222; 0564-21-7151</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ Footer ═══════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__brand-name">岡田印刷</div>
+        <div class="footer__brand-copy">価値を、かたどる。</div>
+        <p class="footer__brand-text">
+          印刷を原点に、企業の想い、地域の物語、<br>
+          情報と知恵を、人に届く形へとかたどる会社。<br><br>
+          愛知県岡崎市板屋町2番地<br>
+          TEL: 0564-21-7151
+        </p>
+      </div>
+      <div>
+        <div class="footer__heading">事業案内</div>
+        <div class="footer__links">
+          <a href="pages/services/communication.html" class="footer__link">コミュニケーションデザイン</a>
+          <a href="pages/services/local-brand.html" class="footer__link">地域資源ブランド化</a>
+          <a href="pages/services/ai-support.html" class="footer__link">生成AI活用支援</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">会社情報</div>
+        <div class="footer__links">
+          <a href="about.html" class="footer__link">私たちについて</a>
+          <a href="company.html" class="footer__link">会社概要</a>
+          <a href="pages/history.html" class="footer__link">沿革</a>
+          <a href="pages/calendar.html" class="footer__link">年間休日カレンダー</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__heading">サイト</div>
+        <div class="footer__links">
+          <a href="projects.html" class="footer__link">取り組み・プロジェクト</a>
+          <a href="news.html" class="footer__link">お知らせ</a>
+          <a href="access.html" class="footer__link">アクセス</a>
+          <a href="contact.html" class="footer__link">お問い合わせ</a>
+          <a href="privacy.html" class="footer__link">プライバシーポリシー</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__copy">&copy; 2026 株式会社岡田印刷 All Rights Reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="岡田印刷の2026年年間休日カレンダー。定休日・夏季休業・年末年始休業などをご確認いただけます。">
+  <title>年間休日カレンダー 2026 | 岡田印刷</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .cal-wrap { margin-bottom: 2.5rem; }
+    .cal-month { border: 1px solid var(--border); overflow: hidden; }
+    .cal-month__header { background: var(--navy); color: var(--white); text-align: center; padding: 0.75rem 0.5rem; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; font-family: var(--font-jp); }
+    .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); }
+    .cal-day-label { font-size: 0.65rem; text-align: center; padding: 0.5rem 0.2rem; background: var(--light-gray); color: var(--text-secondary); font-weight: 600; }
+    .cal-day-label.sun { color: #C53030; }
+    .cal-day-label.sat { color: var(--navy-mid); }
+    .cal-cell { font-size: 0.78rem; text-align: center; padding: 0.5rem 0.2rem; border-bottom: 1px solid rgba(0,0,0,0.04); border-right: 1px solid rgba(0,0,0,0.04); min-height: 32px; display: flex; align-items: center; justify-content: center; }
+    .cal-cell.sun { color: #C53030; }
+    .cal-cell.sat { color: var(--navy-mid); }
+    .cal-cell.holiday { background: #FFF5F5; color: #C53030; font-weight: 700; }
+    .cal-cell.closed { background: #F0F4FF; color: var(--navy-mid); font-weight: 700; }
+    .cal-cell.empty { background: var(--off-white); color: transparent; }
+    .legend { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; font-size: 0.82rem; align-items: center; }
+    .legend-item { display: flex; align-items: center; gap: 0.4rem; }
+    .legend-box { width: 16px; height: 16px; border: 1px solid var(--border); flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="../index.html" class="nav__logo nav__logo--img">
+      <img src="../images/logo.png" alt="株式会社岡田印刷" class="nav__logo-img">
+    </a>
+    <div class="nav__menu">
+      <a href="../about.html" class="nav__link">私たちについて</a>
+      <a href="../services.html" class="nav__link">事業案内</a>
+      <a href="../projects.html" class="nav__link">取り組み</a>
+      <a href="../company.html" class="nav__link">会社案内</a>
+      <a href="../news.html" class="nav__link">お知らせ</a>
+      <a href="../access.html" class="nav__link">アクセス</a>
+      <a href="../contact.html" class="nav__cta nav__link">お問い合わせ</a>
+    </div>
+    <button class="nav__hamburger" aria-label="メニュー" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile-menu">
+    <a href="../about.html" class="nav__mobile-link">私たちについて</a>
+    <a href="../services.html" class="nav__mobile-link">事業案内</a>
+    <a href="../projects.html" class="nav__mobile-link">取り組み・プロジェクト</a>
+    <a href="../company.html" class="nav__mobile-link">会社案内</a>
+    <a href="../news.html" class="nav__mobile-link">お知らせ</a>
+    <a href="../access.html" class="nav__mobile-link">アクセス</a>
+    <a href="../contact.html" class="nav__mobile-link">お問い合わせ</a>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="page-header__bg"></div>
+  <div class="container" style="position:relative">
+    <span class="page-header__label">CALENDAR</span>
+    <h1 class="page-header__title">年間休日カレンダー</h1>
+    <p class="page-header__copy">2026年度版</p>
+  </div>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb__inner">
+      <span class="breadcrumb__item"><a href="../index.html">TOP</a></span>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item"><a href="../company.html">会社案内</a></span>
+      <span class="breadcrumb__sep">/</span>
+      <span class="breadcrumb__item">年間休日カレンダー</span>
+    </div>
+  </div>
+</div>
+
+<!-- Sub nav -->
+<div style="background:var(--off-white);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="display:flex;gap:0;overflow-x:auto">
+      <a href="../company.html" style="padding:1rem 1.5rem;font-size:0.85rem;color:var(--text-secondary);white-space:nowrap">会社概要</a>
+      <a href="history.html" style="padding:1rem 1.5rem;font-size:0.85rem;color:var(--text-secondary);white-space:nowrap">沿革</a>
+      <a href="calendar.html" style="padding:1rem 1.5rem;font-size:0.85rem;color:var(--navy);font-weight:700;border-bottom:2px solid var(--navy);white-space:nowrap">年間休日カレンダー</a>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="reveal" style="margin-bottom:2.5rem">
+      <div style="padding:1.25rem 1.5rem;background:var(--off-white);border-left:4px solid var(--navy);font-size:0.9rem;color:var(--text-secondary);line-height:1.9">
+        <strong style="color:var(--navy)">営業時間：</strong>月〜金 8:30〜17:30
+        <strong style="color:var(--navy)">定休日：</strong>土・日・祝日<br>
+        夏季休業・年末年始休業については下記カレンダーをご確認ください。
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend reveal">
+      <div class="legend-item"><div class="legend-box" style="background:#FFF5F5;border-color:#FEB2B2"></div>祝日・休日</div>
+      <div class="legend-item"><div class="legend-box" style="background:#F0F4FF;border-color:#BEE3F8"></div>会社休業日（夏季・年末年始など）</div>
+      <div class="legend-item"><div style="width:16px;height:16px;background:white;border:1px solid var(--border);display:flex;align-items:center;justify-content:center"><span style="color:#C53030;font-size:0.65rem;font-weight:700">日</span></div>日曜日</div>
+      <div class="legend-item"><div style="width:16px;height:16px;background:white;border:1px solid var(--border);display:flex;align-items:center;justify-content:center"><span style="color:var(--navy-mid);font-size:0.65rem;font-weight:700">土</span></div>土曜日</div>
+    </div>
+
+    <!-- Calendar Grid 2026 -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="reveal">
+
+      <!-- January -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 1月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell holiday">1</div><div class="cal-cell holiday">2</div><div class="cal-cell closed sat">3</div>
+          <div class="cal-cell closed sun">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell sat">10</div>
+          <div class="cal-cell sun">11</div><div class="cal-cell holiday">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell sat">17</div>
+          <div class="cal-cell sun">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell sat">24</div>
+          <div class="cal-cell sun">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell sat">31</div>
+        </div>
+      </div>
+
+      <!-- February -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 2月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell sun">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell sat">7</div>
+          <div class="cal-cell sun">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell holiday">12</div><div class="cal-cell">13</div><div class="cal-cell sat">14</div>
+          <div class="cal-cell sun">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell sat">21</div>
+          <div class="cal-cell sun">22</div><div class="cal-cell holiday">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell sat">28</div>
+        </div>
+      </div>
+
+      <!-- March -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 3月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell sun">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell sat">7</div>
+          <div class="cal-cell sun">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell">13</div><div class="cal-cell sat">14</div>
+          <div class="cal-cell sun">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell holiday">20</div><div class="cal-cell sat">21</div>
+          <div class="cal-cell sun">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell sat">28</div>
+          <div class="cal-cell sun">29</div><div class="cal-cell">30</div><div class="cal-cell">31</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- April -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 4月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell sat">4</div>
+          <div class="cal-cell sun">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell sat">11</div>
+          <div class="cal-cell sun">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell sat">18</div>
+          <div class="cal-cell sun">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell sat">25</div>
+          <div class="cal-cell sun">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell holiday">29</div><div class="cal-cell">30</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- May (GW) -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 5月（GW）</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell holiday">1</div><div class="cal-cell closed sat">2</div>
+          <div class="cal-cell closed sun">3</div><div class="cal-cell closed holiday">4</div><div class="cal-cell closed holiday">5</div><div class="cal-cell closed holiday">6</div><div class="cal-cell closed">7</div><div class="cal-cell closed">8</div><div class="cal-cell closed sat">9</div>
+          <div class="cal-cell sun">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell sat">16</div>
+          <div class="cal-cell sun">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div><div class="cal-cell sat">23</div>
+          <div class="cal-cell sun">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell">29</div><div class="cal-cell sat">30</div>
+          <div class="cal-cell sun">31</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- June -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 6月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell sat">6</div>
+          <div class="cal-cell sun">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell sat">13</div>
+          <div class="cal-cell sun">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell sat">20</div>
+          <div class="cal-cell sun">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell sat">27</div>
+          <div class="cal-cell sun">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- July -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 7月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell sat">4</div>
+          <div class="cal-cell sun">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell sat">11</div>
+          <div class="cal-cell sun">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell holiday">17</div><div class="cal-cell sat">18</div>
+          <div class="cal-cell sun">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell sat">25</div>
+          <div class="cal-cell sun">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell">31</div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- August (Summer) -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 8月（夏季休業）</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell sat">1</div>
+          <div class="cal-cell sun">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell sat">8</div>
+          <div class="cal-cell closed sun">9</div><div class="cal-cell closed">10</div><div class="cal-cell closed holiday">11</div><div class="cal-cell closed">12</div><div class="cal-cell closed">13</div><div class="cal-cell closed">14</div><div class="cal-cell closed sat">15</div>
+          <div class="cal-cell sun">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell sat">22</div>
+          <div class="cal-cell sun">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell sat">29</div>
+          <div class="cal-cell sun">30</div><div class="cal-cell">31</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- September -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 9月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell sat">6</div>
+          <div class="cal-cell sun">7</div><div class="cal-cell holiday">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell sat">13</div>
+          <div class="cal-cell sun">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell sat">20</div>
+          <div class="cal-cell holiday">21</div><div class="cal-cell holiday">22</div><div class="cal-cell holiday">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell sat">27</div>
+          <div class="cal-cell sun">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- October -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 10月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell sat">4</div>
+          <div class="cal-cell sun">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell sat">11</div>
+          <div class="cal-cell sun">12</div><div class="cal-cell holiday">13</div><div class="cal-cell">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell sat">18</div>
+          <div class="cal-cell sun">19</div><div class="cal-cell">20</div><div class="cal-cell">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell sat">25</div>
+          <div class="cal-cell sun">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell">31</div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- November -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 11月</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell sun">1</div><div class="cal-cell">2</div><div class="cal-cell holiday">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell sat">7</div>
+          <div class="cal-cell sun">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell">13</div><div class="cal-cell sat">14</div>
+          <div class="cal-cell sun">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell">20</div><div class="cal-cell sat">21</div>
+          <div class="cal-cell sun">22</div><div class="cal-cell holiday">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell sat">28</div>
+          <div class="cal-cell sun">29</div><div class="cal-cell">30</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+      <!-- December (Year-end) -->
+      <div class="cal-month">
+        <div class="cal-month__header">2026年 12月（年末休業）</div>
+        <div class="cal-days">
+          <div class="cal-day-label sun">日</div><div class="cal-day-label">月</div><div class="cal-day-label">火</div><div class="cal-day-label">水</div><div class="cal-day-label">木</div><div class="cal-day-label">金</div><div class="cal-day-label sat">土</div>
+          <div class="cal-cell empty"></div><div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell sat">6</div>
+          <div class="cal-cell sun">7</div><div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell sat">13</div>
+          <div class="cal-cell sun">14</div><div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div><div class="cal-cell">19</div><div class="cal-cell sat">20</div>
+          <div class="cal-cell sun">21</div><div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell sat">27</div>
+          <div class="cal-cell sun">28</div><div class="cal-cell closed">29</div><div class="cal-cell closed">30</div><div class="cal-cell closed holiday">31</div><div class="cal-cell empty"></div><div class="cal-cell empty"></div><div class="cal-cell empty"></div>
+        </div>
+      </div>
+
+    </div><!-- /calendar grid -->
+
+    <!-- Summary notes -->
+    <div style="margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem" class="reveal">
+      <div style="padding:1.5rem;border:1px solid var(--border);border-top:3px solid var(--navy)">
+        <h3 style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem">🎌 年末年始休業</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">2026年12月29日（火）〜<br>2027年1月4日（月）</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-top:3px solid var(--muted-green)">
+        <h3 style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem">☀️ 夏季休業</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">2026年8月9日（日）〜<br>8月15日（土）</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-top:3px solid var(--warm-gold)">
+        <h3 style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem">🌸 GW休業</h3>
+        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">2026年4月29日（水）〜<br>5月9日（土）</p>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin-top:2rem">
+      ※ 休業日・祝日は変更になる場合があります。最新情報は<a href="../news.html" style="color:var(--navy-mid)">お知らせ</a>をご確認ください。
+    </p>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div><div class="footer__brand-name">岡田印刷</div><div class="footer__brand-copy">価値を、かたどる。</div><p class="footer__brand-text">愛知県岡崎市板屋町2番地<br>TEL: 0564-21-7151</p></div>
+      <div><div class="footer__heading">事業案内</div><div class="footer__links"><a href="services/communication.html" class="footer__link">コミュニケーションデザイン</a><a href="services/local-brand.html" class="footer__link">地域資源ブランド化</a><a href="services/ai-support.html" class="footer__link">生成AI活用支援</a></div></div>
+      <div><div class="footer__heading">会社情報</div><div class="footer__links"><a href="../about.html" class="footer__link">私たちについて</a><a href="../company.html" class="footer__link">会社概要</a><a href="history.html" class="footer__link">沿革</a><a href="calendar.html" class="footer__link">年間休日カレンダー</a></div></div>
+      <div><div class="footer__heading">サイト</div><div class="footer__links"><a href="../news.html" class="footer__link">お知らせ</a><a href="../access.html" class="footer__link">アクセス</a><a href="../contact.html" class="footer__link">お問い合わせ</a><a href="../privacy.html" class="footer__link">プライバシーポリシー</a></div></div>
+    </div>
+    <div class="footer__bottom"><div class="footer__copy">&copy; 2026 株式会社岡田印刷 All Rights Reserved.</div></div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
