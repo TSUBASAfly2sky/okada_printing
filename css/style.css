@@ -810,6 +810,16 @@ h1, h2, h3, h4 {
   letter-spacing: 0.08em;
 }
 
+.footer__brand-logo {
+  margin-bottom: 1rem;
+}
+
+.footer__brand-logo img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
 .footer__brand-copy {
   font-size: 0.8rem;
   color: var(--warm-gold);
@@ -930,6 +940,127 @@ h1, h2, h3, h4 {
 .breadcrumb__item a:hover { color: var(--navy); }
 
 .breadcrumb__sep { color: var(--border); }
+
+/* ========================================
+   Local Brand Value Cards
+   ======================================== */
+
+.lb-value {
+  border: 1px solid var(--border);
+  background: var(--white);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.lb-value:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(11,31,58,0.12);
+}
+
+.lb-value--green { border-top: 3px solid var(--muted-green); }
+.lb-value--navy { border-top: 3px solid var(--navy); }
+.lb-value--gold { border-top: 3px solid var(--warm-gold); }
+.lb-value--navy-mid { border-top: 3px solid var(--navy-mid); }
+
+.lb-value__img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lb-value__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  padding: 1rem;
+}
+
+.lb-value:hover .lb-value__img img { transform: scale(1.04); }
+
+.lb-value__body {
+  padding: 1.75rem 2rem 2rem;
+}
+
+.lb-value__title {
+  font-family: var(--font-jp);
+  font-size: 1.1rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.lb-value__text {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
+/* ========================================
+   Business Items (Service Detail Cards)
+   ======================================== */
+
+.biz-item {
+  border: 1px solid var(--border);
+  background: var(--off-white);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), box-shadow 0.4s;
+  display: flex;
+  flex-direction: column;
+}
+
+.biz-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(11,31,58,0.12);
+}
+
+.biz-item__img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.biz-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.biz-item:hover .biz-item__img img { transform: scale(1.06); }
+
+.biz-item__img--emoji {
+  background: var(--off-white);
+}
+
+.biz-item__title {
+  font-family: var(--font-jp);
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 1.5rem 1.5rem 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.biz-item__text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0 1.5rem 1.5rem;
+}
 
 /* ========================================
    Service Detail Pages
