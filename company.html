@@ -17,9 +17,23 @@
     </a>
     <div class="nav__menu">
       <a href="about.html" class="nav__link">私たちについて</a>
-      <a href="services.html" class="nav__link">事業案内</a>
+      <div class="nav__item">
+        <a href="services.html" class="nav__link">事業案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/services/communication.html" class="nav__dropdown-link">コミュニケーションデザイン事業</a>
+          <a href="pages/services/local-brand.html" class="nav__dropdown-link">地域資源ブランド化事業</a>
+          <a href="pages/services/ai-support.html" class="nav__dropdown-link">生成AI活用支援事業</a>
+        </div>
+      </div>
       <a href="projects.html" class="nav__link">取り組み</a>
-      <a href="company.html" class="nav__link">会社案内</a>
+      <div class="nav__item">
+        <a href="company.html" class="nav__link">会社案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/history.html" class="nav__dropdown-link">沿革</a>
+          <a href="pages/calendar.html" class="nav__dropdown-link">年間休日カレンダー</a>
+          <a href="access.html" class="nav__dropdown-link">アクセス</a>
+        </div>
+      </div>
       <a href="news.html" class="nav__link">お知らせ</a>
       <a href="access.html" class="nav__link">アクセス</a>
       <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
@@ -70,6 +84,26 @@
 <section class="section">
   <div class="container">
     <div style="max-width:760px;margin:0 auto">
+
+      <!-- Quick links: 沿革・年間休日カレンダー・アクセス -->
+      <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:5rem" class="reveal">
+        <a href="pages/history.html" class="co-quick-card">
+          <div class="co-quick-card__img"><img src="images/co_icon_history.png" alt=""></div>
+          <div class="co-quick-card__label">沿革</div>
+          <div class="co-quick-card__sub">1917年から現在までの歩み</div>
+        </a>
+        <a href="pages/calendar.html" class="co-quick-card">
+          <div class="co-quick-card__img"><img src="images/co_icon_calendar.png" alt=""></div>
+          <div class="co-quick-card__label">年間休日カレンダー</div>
+          <div class="co-quick-card__sub">2026年度の休業日一覧</div>
+        </a>
+        <a href="access.html" class="co-quick-card">
+          <div class="co-quick-card__img"><img src="images/co_icon_access.png" alt=""></div>
+          <div class="co-quick-card__label">アクセス</div>
+          <div class="co-quick-card__sub">地図・駐車場案内</div>
+        </a>
+      </div>
+
       <div class="reveal">
         <span class="section-label">COMPANY PROFILE</span>
         <h2 class="section-title">会社概要</h2>
@@ -111,30 +145,6 @@
         </tr>
       </table>
 
-      <div style="margin-top:5rem" class="reveal">
-        <span class="section-label">ACCESS</span>
-        <h2 class="section-title">アクセス</h2>
-        <div class="divider"></div>
-        <p style="color:var(--text-secondary);margin-bottom:2rem">詳しいアクセス情報・地図は<a href="access.html" style="color:var(--navy-mid);font-weight:600">アクセスページ</a>をご覧ください。</p>
-      </div>
-
-      <div style="margin-top:3rem;display:flex;gap:2rem;flex-wrap:wrap" class="reveal">
-        <a href="pages/history.html" style="flex:1;min-width:200px;padding:2rem;border:1px solid var(--border);text-align:center;transition:all 0.3s;display:block" onmouseover="this.style.background='var(--off-white)'" onmouseout="this.style.background='white'">
-          <div style="font-size:2rem;margin-bottom:1rem">📜</div>
-          <div style="font-family:var(--font-jp);color:var(--navy);font-weight:700;margin-bottom:0.5rem">沿革</div>
-          <div style="font-size:0.82rem;color:var(--text-secondary)">1917年から現在までの歩み</div>
-        </a>
-        <a href="pages/calendar.html" style="flex:1;min-width:200px;padding:2rem;border:1px solid var(--border);text-align:center;transition:all 0.3s;display:block" onmouseover="this.style.background='var(--off-white)'" onmouseout="this.style.background='white'">
-          <div style="font-size:2rem;margin-bottom:1rem">📅</div>
-          <div style="font-family:var(--font-jp);color:var(--navy);font-weight:700;margin-bottom:0.5rem">年間休日カレンダー</div>
-          <div style="font-size:0.82rem;color:var(--text-secondary)">2026年度の休業日一覧</div>
-        </a>
-        <a href="access.html" style="flex:1;min-width:200px;padding:2rem;border:1px solid var(--border);text-align:center;transition:all 0.3s;display:block" onmouseover="this.style.background='var(--off-white)'" onmouseout="this.style.background='white'">
-          <div style="font-size:2rem;margin-bottom:1rem">📍</div>
-          <div style="font-family:var(--font-jp);color:var(--navy);font-weight:700;margin-bottom:0.5rem">アクセス</div>
-          <div style="font-size:0.82rem;color:var(--text-secondary)">地図・駐車場案内</div>
-        </a>
-      </div>
     </div>
   </div>
 </section>

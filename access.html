@@ -17,9 +17,23 @@
     </a>
     <div class="nav__menu">
       <a href="about.html" class="nav__link">私たちについて</a>
-      <a href="services.html" class="nav__link">事業案内</a>
+      <div class="nav__item">
+        <a href="services.html" class="nav__link">事業案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/services/communication.html" class="nav__dropdown-link">コミュニケーションデザイン事業</a>
+          <a href="pages/services/local-brand.html" class="nav__dropdown-link">地域資源ブランド化事業</a>
+          <a href="pages/services/ai-support.html" class="nav__dropdown-link">生成AI活用支援事業</a>
+        </div>
+      </div>
       <a href="projects.html" class="nav__link">取り組み</a>
-      <a href="company.html" class="nav__link">会社案内</a>
+      <div class="nav__item">
+        <a href="company.html" class="nav__link">会社案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/history.html" class="nav__dropdown-link">沿革</a>
+          <a href="pages/calendar.html" class="nav__dropdown-link">年間休日カレンダー</a>
+          <a href="access.html" class="nav__dropdown-link">アクセス</a>
+        </div>
+      </div>
       <a href="news.html" class="nav__link">お知らせ</a>
       <a href="access.html" class="nav__link">アクセス</a>
       <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
@@ -97,7 +111,7 @@
       <div class="reveal reveal-delay-1">
         <div class="map-embed">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.5!2d137.1665!3d34.9498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601ad1b5c0000001%3A0x1!2z5oSb55-l55yM5bKh5bSO5biC5p板5bGT55S677yS55Wq5Zyw!5e0!3m2!1sja!2sjp!4v1700000000000"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d576.0478632849157!2d137.15622943164573!3d34.95832402521056!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6004bd354363b219%3A0x557734ef2dd735d1!2z5pel5pys44CB44CSNDQ0LTAwNTQg5oSb55-l55yM5bKh5bSO5biC5p2_5bGL55S677yS!5e0!3m2!1sja!2sus!4v1779672052548!5m2!1sja!2sus"
             width="100%"
             height="400"
             style="border:0"
@@ -107,9 +121,6 @@
             title="岡田印刷 地図"
           ></iframe>
         </div>
-        <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.75rem;text-align:center">
-          ※地図の表示には実際の所在地をご確認ください
-        </p>
       </div>
     </div>
 
@@ -117,14 +128,43 @@
     <div style="margin-top:5rem" class="reveal">
       <h2 style="font-family:var(--font-jp);font-size:1.4rem;color:var(--navy);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--navy)">交通案内</h2>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem">
-        <div style="padding:1.5rem;background:var(--off-white);border-left:3px solid var(--navy)">
-          <h3 style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem">🚃 電車でお越しの方</h3>
-          <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9">名鉄名古屋本線「東岡崎駅」より<br>徒歩約15分 / タクシー約5分</p>
+        <div class="access-route">
+          <div class="access-route__head">
+            <div class="access-route__img"><img src="images/access_icon_train.png" alt=""></div>
+            <h3 class="access-route__title">電車でお越しの方</h3>
+          </div>
+          <p class="access-route__text">
+            名鉄名古屋本線「東岡崎駅」より<br>
+            徒歩約15分 / タクシー約5分<br>
+            <br>
+            名鉄名古屋本線「岡崎公園前駅」<br>
+            愛知環状鉄道「中岡崎駅」から徒歩7分
+          </p>
         </div>
-        <div style="padding:1.5rem;background:var(--off-white);border-left:3px solid var(--navy)">
-          <h3 style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem">🚗 お車でお越しの方</h3>
-          <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.9">東名高速道路「岡崎IC」より<br>約15分。お客様用駐車場あり。</p>
+        <div class="access-route">
+          <div class="access-route__head">
+            <div class="access-route__img"><img src="images/access_icon_car.png" alt=""></div>
+            <h3 class="access-route__title">お車でお越しの方</h3>
+          </div>
+          <p class="access-route__text">
+            東名高速道路「岡崎IC」より<br>
+            約15分。お客様用駐車場あり。
+          </p>
         </div>
+      </div>
+
+      <!-- Parking map -->
+      <div style="margin-top:2.5rem">
+        <h3 style="font-family:var(--font-jp);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem">
+          <span style="display:inline-block;width:4px;height:18px;background:var(--warm-gold)"></span>
+          駐車場のご案内
+        </h3>
+        <div class="parking-map">
+          <img src="images/access_img_01.jpg" alt="岡田印刷 駐車場マップ">
+        </div>
+        <p style="font-size:0.78rem;color:var(--text-secondary);margin-top:0.75rem;line-height:1.8">
+          国道1号線「龍城橋西」交差点を岡崎方面へ。事務所入口横の「お客さま駐車場（黄色エリア）」をご利用ください。
+        </p>
       </div>
     </div>
   </div>

@@ -17,9 +17,23 @@
     </a>
     <div class="nav__menu">
       <a href="about.html" class="nav__link">私たちについて</a>
-      <a href="services.html" class="nav__link">事業案内</a>
+      <div class="nav__item">
+        <a href="services.html" class="nav__link">事業案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/services/communication.html" class="nav__dropdown-link">コミュニケーションデザイン事業</a>
+          <a href="pages/services/local-brand.html" class="nav__dropdown-link">地域資源ブランド化事業</a>
+          <a href="pages/services/ai-support.html" class="nav__dropdown-link">生成AI活用支援事業</a>
+        </div>
+      </div>
       <a href="projects.html" class="nav__link">取り組み</a>
-      <a href="company.html" class="nav__link">会社案内</a>
+      <div class="nav__item">
+        <a href="company.html" class="nav__link">会社案内</a>
+        <div class="nav__dropdown">
+          <a href="pages/history.html" class="nav__dropdown-link">沿革</a>
+          <a href="pages/calendar.html" class="nav__dropdown-link">年間休日カレンダー</a>
+          <a href="access.html" class="nav__dropdown-link">アクセス</a>
+        </div>
+      </div>
       <a href="news.html" class="nav__link">お知らせ</a>
       <a href="access.html" class="nav__link">アクセス</a>
       <a href="contact.html" class="nav__cta nav__link">お問い合わせ</a>
@@ -118,33 +132,29 @@
 
     <!-- Hatcho Miso Paper -->
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem">
-      <div style="border:1px solid var(--border);overflow:hidden" class="reveal">
-        <div style="position:relative;height:240px;overflow:hidden">
-          <img src="images/hatcho_miso_card.jpeg" alt="八丁味噌紙" style="width:100%;height:100%;object-fit:cover;display:block">
+      <a href="https://hatcho-miso-paper.jp/" target="_blank" rel="noopener noreferrer" class="project-card project-card--miso reveal">
+        <div class="project-card__bg" aria-hidden="true">
+          <img src="images/hatcho_miso_card.jpeg" alt="">
         </div>
-        <div style="background:var(--muted-green);padding:1.75rem 2.5rem;display:flex;align-items:center;gap:1rem">
-          <img src="images/hatcho_miso_icon.png" alt="" style="width:48px;height:48px;object-fit:contain;filter:brightness(0) invert(1);flex-shrink:0" onerror="this.style.display='none'">
-          <div>
-            <span style="font-size:0.7rem;letter-spacing:0.2em;color:rgba(255,255,255,0.7);font-weight:600;display:block;margin-bottom:0.35rem">PROJECT 01</span>
-            <h3 style="font-family:var(--font-jp);font-size:1.4rem;color:var(--white);font-weight:900;margin-bottom:0.25rem">八丁味噌紙</h3>
-            <p style="font-size:0.72rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em">HATCHO MISO PAPER</p>
-          </div>
-        </div>
-        <div style="padding:2rem">
-          <p style="font-size:0.9rem;color:var(--text-secondary);line-height:2;margin-bottom:1.5rem">
-            岡崎の伝統産業「八丁味噌」の味噌粕を活用した地域ブランド紙。独特の風合いと温もりある質感が特長で、名刺・パッケージ・ノベルティとして地域のブランドを彩ります。
+        <div class="project-card__overlay" aria-hidden="true"></div>
+        <div class="project-card__content">
+          <span class="project-card__tag">PROJECT 01</span>
+          <h3 class="project-card__title">
+            <img src="images/hatcho_miso_icon.png" alt="" class="project-card__icon" onerror="this.style.display='none'">
+            八丁味噌紙
+          </h3>
+          <p class="project-card__text">
+            岡崎が誇る名産品「八丁味噌」の製造過程で生まれ、商品規格に乗らない"蓋味噌"をアップサイクル活用した地域ブランド紙。独特の風合いと温もりある質感が特長で、名刺・パッケージ・ノベルティとして地域のブランドを彩ります。
           </p>
-          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem">
-            <span style="font-size:0.72rem;padding:0.25rem 0.7rem;background:var(--light-gray);color:var(--text-secondary)">味噌粕活用</span>
-            <span style="font-size:0.72rem;padding:0.25rem 0.7rem;background:var(--light-gray);color:var(--text-secondary)">名刺</span>
-            <span style="font-size:0.72rem;padding:0.25rem 0.7rem;background:var(--light-gray);color:var(--text-secondary)">パッケージ</span>
-            <span style="font-size:0.72rem;padding:0.25rem 0.7rem;background:var(--light-gray);color:var(--text-secondary)">ノベルティ</span>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem">
+            <span style="font-size:0.72rem;padding:0.25rem 0.75rem;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);border:1px solid rgba(230,198,138,0.4);letter-spacing:0.04em">味噌粕活用</span>
+            <span style="font-size:0.72rem;padding:0.25rem 0.75rem;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);border:1px solid rgba(230,198,138,0.4);letter-spacing:0.04em">名刺</span>
+            <span style="font-size:0.72rem;padding:0.25rem 0.75rem;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);border:1px solid rgba(230,198,138,0.4);letter-spacing:0.04em">パッケージ</span>
+            <span style="font-size:0.72rem;padding:0.25rem 0.75rem;background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.85);border:1px solid rgba(230,198,138,0.4);letter-spacing:0.04em">ノベルティ</span>
           </div>
-          <a href="https://hatcho-miso-paper.jp/" target="_blank" rel="noopener noreferrer" class="service-card__link" style="font-size:0.85rem;color:var(--muted-green);font-weight:700;display:flex;align-items:center;gap:0.4rem">
-            八丁味噌紙サイトへ（外部リンク） &rarr;
-          </a>
+          <span class="project-card__link">八丁味噌紙公式サイトへ（外部リンク） &rarr;</span>
         </div>
-      </div>
+      </a>
 
       <div style="border:1px solid var(--border);overflow:hidden" class="reveal reveal-delay-1">
         <div style="background:var(--navy);padding:2.5rem">

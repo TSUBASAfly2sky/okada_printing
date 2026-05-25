@@ -17,9 +17,23 @@
     </a>
     <div class="nav__menu">
       <a href="../../about.html" class="nav__link">私たちについて</a>
-      <a href="../../services.html" class="nav__link">事業案内</a>
+      <div class="nav__item">
+        <a href="../../services.html" class="nav__link">事業案内</a>
+        <div class="nav__dropdown">
+          <a href="communication.html" class="nav__dropdown-link">コミュニケーションデザイン事業</a>
+          <a href="local-brand.html" class="nav__dropdown-link">地域資源ブランド化事業</a>
+          <a href="ai-support.html" class="nav__dropdown-link">生成AI活用支援事業</a>
+        </div>
+      </div>
       <a href="../../projects.html" class="nav__link">取り組み</a>
-      <a href="../../company.html" class="nav__link">会社案内</a>
+      <div class="nav__item">
+        <a href="../../company.html" class="nav__link">会社案内</a>
+        <div class="nav__dropdown">
+          <a href="../history.html" class="nav__dropdown-link">沿革</a>
+          <a href="../calendar.html" class="nav__dropdown-link">年間休日カレンダー</a>
+          <a href="../../access.html" class="nav__dropdown-link">アクセス</a>
+        </div>
+      </div>
       <a href="../../news.html" class="nav__link">お知らせ</a>
       <a href="../../access.html" class="nav__link">アクセス</a>
       <a href="../../contact.html" class="nav__cta nav__link">お問い合わせ</a>
@@ -67,34 +81,40 @@
 
     <!-- Service menu -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:5rem">
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--navy)" class="reveal">
-        <div style="font-size:2rem;margin-bottom:1rem">🎓</div>
-        <h3 style="font-family:var(--font-jp);font-size:1rem;color:var(--navy);margin-bottom:0.75rem">生成AIセミナー</h3>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">初心者向け・業種別・社内研修。基礎から実践まで、現場に合わせて設計します。</p>
+      <div class="ai-svc-card ai-svc-card--navy reveal">
+        <div class="ai-svc-card__img"><img src="../../images/ai_icon_seminar.png" alt=""></div>
+        <h3 class="ai-svc-card__title">生成AIセミナー</h3>
+        <p class="ai-svc-card__text">初心者向け・業種別・社内研修。基礎から実践まで、現場に合わせて設計します。</p>
       </div>
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--navy-mid)" class="reveal reveal-delay-1">
-        <div style="font-size:2rem;margin-bottom:1rem">⚙️</div>
-        <h3 style="font-family:var(--font-jp);font-size:1rem;color:var(--navy);margin-bottom:0.75rem">導入支援</h3>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">どのツールをどう使うか、使い方設計・運用ルールづくりまで伴走します。</p>
+      <div class="ai-svc-card ai-svc-card--mid reveal reveal-delay-1">
+        <div class="ai-svc-card__img"><img src="../../images/ai_icon_introduction.png" alt=""></div>
+        <h3 class="ai-svc-card__title">企業内導入支援</h3>
+        <p class="ai-svc-card__text">各部署へのヒアリングから、どのツールをどう使うか、使い方設計・運用ルールづくりまでオーダーメイドで伴走支援を行います。</p>
       </div>
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--warm-gold)" class="reveal reveal-delay-2">
-        <div style="font-size:2rem;margin-bottom:1rem">✍️</div>
-        <h3 style="font-family:var(--font-jp);font-size:1rem;color:var(--navy);margin-bottom:0.75rem">プロンプト設計</h3>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">業務に合わせた指示文（プロンプト）テンプレートを作成。繰り返し使える仕組みに。</p>
+      <div class="ai-svc-card ai-svc-card--gold reveal reveal-delay-2">
+        <div class="ai-svc-card__img"><img src="../../images/ai_icon_template.png" alt=""></div>
+        <h3 class="ai-svc-card__title">withAI 業務テンプレート設計</h3>
+        <p class="ai-svc-card__text">メール・資料作成・議事録・情報整理など、業務に合わせたAIテンプレートを作成。業務で繰り返し使える仕組みを作成します。</p>
       </div>
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--muted-green)" class="reveal">
-        <div style="font-size:2rem;margin-bottom:1rem">📊</div>
-        <h3 style="font-family:var(--font-jp);font-size:1rem;color:var(--navy);margin-bottom:0.75rem">業務改善支援</h3>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">メール・資料作成・議事録・情報整理など、日々の業務をAIで効率化。</p>
-      </div>
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--navy)" class="reveal reveal-delay-1">
-        <div style="font-size:2rem;margin-bottom:1rem">📋</div>
-        <h3 style="font-family:var(--font-jp);font-size:1rem;color:var(--navy);margin-bottom:0.75rem">社内活用支援</h3>
-        <p style="font-size:0.85rem;color:var(--text-secondary);line-height:1.8">社内ルール整備、活用事例集、マニュアル作成など、組織全体への定着を支援。</p>
-      </div>
-      <div style="padding:2rem;border:1px solid var(--border);border-top:3px solid var(--navy-mid);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--off-white)" class="reveal reveal-delay-2">
-        <p style="font-size:0.88rem;color:var(--text-secondary);line-height:2;margin-bottom:1rem">ご要望に合わせて<br>カスタマイズ対応します</p>
-        <a href="../../contact.html" class="btn btn--navy" style="font-size:0.82rem;padding:0.6rem 1.2rem">相談する</a>
+    </div>
+
+    <!-- 生成AIセミナー実績 -->
+    <div style="margin-bottom:5rem" class="reveal">
+      <h2 style="font-family:var(--font-jp);font-size:1.4rem;color:var(--navy);margin-bottom:1.5rem;padding-bottom:0.75rem;border-bottom:2px solid var(--navy)">生成AIセミナー実績</h2>
+      <p style="font-size:0.92rem;color:var(--text-secondary);line-height:2;margin-bottom:1.75rem">
+        行政・商工団体・士業団体・業界団体から民間企業まで、幅広い現場で生成AIセミナー・研修を実施しています。
+      </p>
+      <div class="ai-results-grid">
+        <div class="ai-result-item">岡崎市</div>
+        <a href="http://blog.livedoor.jp/okazakicci/archives/37907964.html" target="_blank" rel="noopener noreferrer" class="ai-result-item ai-result-item--link">岡崎商工会議所</a>
+        <a href="https://kariya-cci.or.jp/kaiin/jissenseminar_jissenkoryukai/" target="_blank" rel="noopener noreferrer" class="ai-result-item ai-result-item--link">刈谷商工会議所</a>
+        <div class="ai-result-item">東海税理士会 各支部</div>
+        <div class="ai-result-item">TKC中部会 各支部</div>
+        <div class="ai-result-item">岡崎市ぬかた商工会</div>
+        <div class="ai-result-item">足助中央商店街協同組合</div>
+        <div class="ai-result-item">愛知県商工会連合会</div>
+        <div class="ai-result-item">JU愛知</div>
+        <div class="ai-result-item ai-result-item--muted">その他 民間企業各社</div>
       </div>
     </div>
 
