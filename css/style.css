@@ -1165,6 +1165,10 @@ h1, h2, h3, h4 {
   .service-table th {
     width: 42% !important;
   }
+  /* Access route cards: 2-col -> 1-col */
+  .access-route-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ========================================
@@ -3421,6 +3425,9 @@ h1, h2, h3, h4 {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
+  /* Image-first ordering on smartphone */
+  .projects-row--img-first > div:first-child { order: 2; }
+  .projects-row--img-first > div:nth-child(2) { order: 1; }
   .history-grid {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
