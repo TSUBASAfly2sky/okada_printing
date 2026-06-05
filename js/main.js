@@ -169,33 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Cursor follower ──────────────────────────
-  if (window.matchMedia('(hover: hover)').matches) {
-    const cursor = document.createElement('div');
-    cursor.className = 'cursor-follower';
-    document.body.appendChild(cursor);
-
-    let mx = 0, my = 0, cx = 0, cy = 0;
-    document.addEventListener('mousemove', (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      cursor.style.opacity = 1;
-    });
-
-    function cursorLoop() {
-      cx += (mx - cx) * 0.18;
-      cy += (my - cy) * 0.18;
-      cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(cursorLoop);
-    }
-    cursorLoop();
-
-    document.querySelectorAll('a, button, .svc-card, .story__step').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-follower--hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-follower--hover'));
-    });
-  }
-
   // ── Heritage twinkling stars ─────────────────
   const heritageStars = document.querySelector('.heritage__stars');
   if (heritageStars) {

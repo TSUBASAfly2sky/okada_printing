@@ -3330,29 +3330,7 @@ h1, h2, h3, h4 {
    Cursor follower (subtle)
    ======================================== */
 
-.cursor-follower {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 32px;
-  height: 32px;
-  border: 1.5px solid var(--warm-gold);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform 0.15s ease-out, width 0.3s, height 0.3s, opacity 0.3s;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  mix-blend-mode: difference;
-}
-
-.cursor-follower--hover {
-  width: 60px;
-  height: 60px;
-  background: rgba(184,138,68,0.15);
-}
-
-@media (hover: none) { .cursor-follower { display: none; } }
+.cursor-follower { display: none !important; }
 
 /* ========================================
    Mobile Navigation
