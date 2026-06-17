@@ -81,27 +81,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── Contact form ──────────────────────────────
+  // フォームは action 先（FormSubmit）へ実際に送信される。
+  // preventDefault はしない（以前は送信をキャンセルしてしまい届かなかった）。
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    form.addEventListener('submit', () => {
       const btn = form.querySelector('[type="submit"]');
-      btn.textContent = '送信中...';
-      btn.disabled = true;
-      setTimeout(() => {
-        form.innerHTML = `
-          <div style="text-align:center;padding:4rem 2rem">
-            <div style="font-size:3rem;margin-bottom:1.5rem">✓</div>
-            <h3 style="font-family:var(--font-jp);color:var(--navy);font-size:1.4rem;margin-bottom:1rem">
-              お問い合わせを受け付けました
-            </h3>
-            <p style="color:var(--text-secondary);line-height:2">
-              お問い合わせいただきありがとうございます。<br>
-              担当者より2〜3営業日以内にご連絡いたします。
-            </p>
-          </div>`;
-      }, 1200);
+      if (btn) {
+        // 送信処理が始まった後にボタン状態を更新（送信自体は止めない）
+        setTimeout(() => {
+          btn.textContent = '送信中...';
+          btn.disabled = true;
+        }, 10);
+      }
     });
+  }
+
+  // 送信完了後（FormSubmit から ?sent=1 で戻ってきたとき）に完了メッセージを表示
+  if (location.search.indexOf('sent=1') !== -1) {
+    const wrapper = document.querySelector('.form-wrapper');
+    if (wrapper) {
+      wrapper.innerHTML = `
+        <div style="text-align:center;padding:4rem 2rem">
+          <div style="font-size:3rem;margin-bottom:1.5rem">✓</div>
+          <h3 style="font-family:var(--font-jp);color:var(--navy);font-size:1.4rem;margin-bottom:1rem">
+            お問い合わせを受け付けました
+          </h3>
+          <p style="color:var(--text-secondary);line-height:2">
+            お問い合わせいただきありがとうございます。<br>
+            担当者より2〜3営業日以内にご連絡いたします。
+          </p>
+        </div>`;
+    }
   }
 
   // ── Hero title char-by-char reveal ───────────
