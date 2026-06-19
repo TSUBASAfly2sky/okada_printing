@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="株式会社岡田印刷 会社・事業紹介プレゼンテーション。価値を、かたどる。1917年創業、岡崎から全国へ。">
+<title>価値を、かたどる。｜岡田印刷 事業紹介プレゼン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;700;900&family=Shippori+Mincho+B1:wght@400;700;800;900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="shortcut icon" href="images/favicon.ico">
+<style>
+:root{
+  --navy:#0B1F3A; --navy-mid:#123B63; --navy-light:#1E5080;
+  --white:#fff; --off-white:#F7F5EF; --light-gray:#EEF1F4;
+  --green:#2F6B4F; --gold:#B88A44; --gold-soft:#D9B873; --shu:#C73E3A;
+  --miso:#241510; --miso-2:#3B2418; --miso-soft:#E8C9A0;
+  --text:#1A1A2E; --text-2:#4A5568; --border:#D9E2EC;
+  --font-jp:'Noto Serif JP','Yu Mincho',serif;
+  --font-display:'Shippori Mincho B1','Noto Serif JP',serif;
+  --font-sans:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --mx:50vw; --my:45vh;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+html.custom-cursor, html.custom-cursor *{cursor:none !important}
+body{
+  font-family:var(--font-sans); color:var(--text);
+  background:var(--navy); line-height:1.8; overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+em{font-style:normal}
+
+/* ===== Deck ===== */
+.deck{ height:100vh; overflow-y:scroll; scroll-snap-type:y mandatory;
+  scroll-behavior:smooth; scrollbar-width:none }
+.deck::-webkit-scrollbar{display:none}
+.slide{
+  position:relative; height:100vh; width:100%;
+  scroll-snap-align:start; scroll-snap-stop:always;
+  display:flex; align-items:center; justify-content:center;
+  padding:4.2rem 4vw 3.2rem; overflow:hidden;
+  background:var(--off-white);
+}
+.slide__inner{ width:100%; max-width:1180px; position:relative; z-index:2 }
+.slide--dark{ background:var(--navy); color:var(--white) }
+.slide--miso{ background:var(--miso); color:var(--white) }
+.slide--dark .s-title, .slide--miso .s-title{ color:var(--white) }
+
+.grain::before{
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  opacity:.5; mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+.slide--dark.grain::before, .slide--miso.grain::before{ mix-blend-mode:screen; opacity:.35 }
+
+/* ===== type ===== */
+.eyebrow{
+  font-family:var(--font-sans); font-size:.95rem; letter-spacing:.36em;
+  text-transform:uppercase; color:var(--gold); font-weight:600;
+  display:inline-flex; align-items:center; gap:.9rem; margin-bottom:1.6rem;
+}
+.eyebrow::before{ content:""; width:38px; height:1px; background:var(--gold) }
+.s-title{
+  font-family:var(--font-display); font-weight:900; color:var(--navy);
+  font-size:clamp(2.6rem,6vw,4.4rem); line-height:1.3; letter-spacing:.06em;
+}
+.s-title--sm{ font-size:clamp(2.2rem,4vw,3.1rem) }
+.s-lead{ color:var(--text-2); font-size:clamp(1.12rem,1.8vw,1.3rem); line-height:2 }
+.slide--dark .s-lead, .slide--miso .s-lead{ color:rgba(255,255,255,.82) }
+.accent{ color:var(--gold) }
+.rule{ width:56px; height:3px; background:var(--gold); margin:1.5rem 0 }
+.rule--c{ margin-left:auto; margin-right:auto }
+
+/* giant outline watermark */
+.wm{
+  position:absolute; z-index:1; pointer-events:none; user-select:none;
+  font-family:var(--font-display); font-weight:900; line-height:1;
+  font-size:clamp(7rem,16vw,14rem); letter-spacing:.03em;
+  color:transparent; -webkit-text-stroke:1.5px rgba(11,31,58,.10);
+  right:1vw; bottom:.5vh; white-space:nowrap;
+}
+.wm--num{ font-size:clamp(12rem,26vw,22rem); top:-3rem; right:2vw; bottom:auto;
+  -webkit-text-stroke-width:2.5px }
+.slide--dark .wm{ -webkit-text-stroke-color:rgba(255,255,255,.10) }
+.slide--miso .wm{ -webkit-text-stroke-color:rgba(232,201,160,.12) }
+
+/* reveal */
+.fx{ opacity:0; transform:translateY(30px); transition:opacity .8s var(--ease), transform .8s var(--ease) }
+.slide.is-active .fx{ opacity:1; transform:none }
+.slide.is-active .fx.d1{ transition-delay:.12s }
+.slide.is-active .fx.d2{ transition-delay:.24s }
+.slide.is-active .fx.d3{ transition-delay:.36s }
+.slide.is-active .fx.d4{ transition-delay:.48s }
+.slide.is-active .fx.d5{ transition-delay:.6s }
+.slide.is-active .fx.d6{ transition-delay:.72s }
+
+.tilt{ transition:transform .3s var(--ease); will-change:transform }
+
+/* ============ COVER（縦書きタイトル） ============ */
+.cover-flex{ display:flex; justify-content:space-between; align-items:center; gap:3rem }
+.cover__vtitle{
+  writing-mode:vertical-rl; font-family:var(--font-display); font-weight:900;
+  color:#fff; font-size:clamp(2.8rem,9.6vh,5.8rem); line-height:1.34; letter-spacing:.1em;
+  margin:0 5vw 0 0; align-self:center;
+}
+.cover__vtitle [data-stamp]{ display:block }
+.cover__vtitle .k{ color:var(--gold-soft) }
+.cover__vtitle .ch{
+  display:inline-block; opacity:0; transform:translateX(.4em) scale(.7) rotate(8deg);
+  filter:blur(4px); will-change:transform;
+}
+.slide.is-active .cover__vtitle .ch{ animation:stampIn .62s var(--ease) forwards }
+@keyframes stampIn{
+  60%{ opacity:1; transform:translate(0,0) scale(1.06) rotate(-1deg); filter:blur(0) }
+  100%{ opacity:1; transform:none; filter:blur(0) }
+}
+.cover__left{ padding-bottom:0 }
+.cover__tag{
+  font-size:.92rem; letter-spacing:.46em; color:var(--gold-soft); font-weight:600;
+  margin-bottom:2rem;
+}
+.cover__company{
+  font-family:var(--font-display); color:#fff; font-size:clamp(1.4rem,2.4vw,2rem);
+  letter-spacing:.18em; line-height:1.7;
+  opacity:0; transition:opacity 1s ease 1.4s;
+}
+.slide.is-active .cover__company{ opacity:1 }
+.cover__sub{
+  margin-top:.8rem; color:rgba(255,255,255,.7); font-size:1rem; letter-spacing:.3em;
+  opacity:0; transition:opacity 1s ease 1.65s;
+}
+.slide.is-active .cover__sub{ opacity:1 }
+.cover__hint{
+  margin-top:2.2rem; font-size:.85rem; letter-spacing:.18em; color:rgba(217,184,115,.7);
+  opacity:0; transition:opacity 1s ease 2s;
+}
+.slide.is-active .cover__hint{ opacity:1 }
+.cover__year{
+  font-family:var(--font-display); color:rgba(255,255,255,.35); letter-spacing:.3em;
+  font-size:1rem; margin-bottom:1rem;
+}
+.sky{ position:absolute; inset:0; z-index:0; overflow:hidden }
+.sky::after{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(120% 80% at 50% 30%, rgba(30,80,128,.55), transparent 60%),
+             radial-gradient(100% 100% at 50% 120%, rgba(184,138,68,.18), transparent 55%);
+}
+.twinkle{ position:absolute; border-radius:50%; background:var(--gold-soft);
+  box-shadow:0 0 8px 1px rgba(217,184,115,.6); animation:tw 3.2s ease-in-out infinite }
+@keyframes tw{ 0%,100%{opacity:.15;transform:scale(.7)} 50%{opacity:.9;transform:scale(1.15)} }
+.float-img{ position:absolute; opacity:.16; filter:brightness(0) invert(1);
+  animation:floaty 9s ease-in-out infinite; z-index:0 }
+@keyframes floaty{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-22px) rotate(4deg)} }
+
+.spot{ position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:radial-gradient(460px at var(--mx) var(--my), rgba(217,184,115,.10), transparent 65%) }
+.hidden-word{
+  position:absolute; inset:0; z-index:1; pointer-events:none; user-select:none;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:900; letter-spacing:.05em;
+  color:transparent; -webkit-text-stroke:1.5px rgba(217,184,115,.6);
+  font-size:clamp(4.5rem,13.5vw,12.5rem); white-space:nowrap;
+  -webkit-mask-image:radial-gradient(300px at var(--mx) var(--my), #000 25%, transparent 72%);
+  mask-image:radial-gradient(300px at var(--mx) var(--my), #000 25%, transparent 72%);
+}
+
+/* ============ AGENDA ============ */
+.agenda{ display:grid; grid-template-columns:1fr 1fr; gap:.4rem 3rem; margin-top:2.2rem }
+.agenda__item{ display:flex; align-items:center; gap:1.4rem; padding:1.15rem .4rem;
+  border-bottom:1px solid var(--border) }
+.agenda__no{
+  font-family:var(--font-display); font-weight:900; font-size:2.6rem; line-height:1;
+  color:transparent; -webkit-text-stroke:1.5px var(--gold); min-width:4.2rem;
+}
+.agenda__tx b{ font-family:var(--font-display); font-size:clamp(1.25rem,1.9vw,1.55rem); color:var(--navy); font-weight:800 }
+.agenda__tx span{ display:block; font-size:.88rem; color:var(--text-2); letter-spacing:.18em }
+
+/* ============ ABOUT（全面写真＋重なり） ============ */
+.about-photo{ position:absolute; top:0; right:0; bottom:0; width:44%; z-index:1 }
+.about-photo img{ width:100%; height:100%; object-fit:cover }
+.about-photo::after{ content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, var(--off-white) 0%, rgba(247,245,239,0) 38%),
+             linear-gradient(0deg, rgba(11,31,58,.35), transparent 35%) }
+.about-photo__tate{
+  position:absolute; right:2rem; top:46%; transform:translateY(-50%); z-index:2;
+  writing-mode:vertical-rl; font-family:var(--font-display); font-weight:700;
+  color:#fff; font-size:1.15rem; letter-spacing:.42em;
+  text-shadow:0 2px 18px rgba(11,31,58,.85); border-right:1px solid rgba(255,255,255,.5);
+  padding-right:1rem;
+}
+.about-content{ width:58%; position:relative; z-index:3 }
+.stats{ display:grid; grid-template-columns:repeat(2,1fr); gap:.9rem; margin-top:1.4rem; max-width:560px }
+.stat{ background:rgba(255,255,255,.92); border:1px solid var(--border); border-radius:14px;
+  padding:1rem 1.4rem; box-shadow:0 14px 36px -28px rgba(11,31,58,.5) }
+.stat__n{ font-family:var(--font-display); font-weight:900; color:var(--navy);
+  font-size:clamp(2.6rem,4.6vw,3.5rem); line-height:1.05; display:flex; align-items:baseline; gap:.3rem }
+.stat__u{ font-size:1.15rem; color:var(--gold); font-weight:700 }
+.stat__l{ font-size:.95rem; color:var(--text-2); letter-spacing:.06em; margin-top:.35rem }
+
+/* ============ KATADORU ============ */
+.kd-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:1.8rem;
+  perspective:1400px }
+.kd{ position:relative; height:284px; border-radius:16px }
+.kd__inner{ position:relative; width:100%; height:100%; transition:transform .8s var(--ease);
+  transform-style:preserve-3d }
+.kd:hover .kd__inner{ transform:rotateY(180deg) }
+.kd__face{ position:absolute; inset:0; border-radius:16px; backface-visibility:hidden;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:1.8rem 1.4rem; text-align:center; border:1px solid var(--border) }
+.kd__front{ background:#fff; box-shadow:0 16px 40px -30px rgba(11,31,58,.55) }
+.kd__kanji{ font-family:var(--font-display); font-weight:900; font-size:5.4rem; color:var(--navy);
+  line-height:1; margin-bottom:.8rem }
+.kd__yomi{ font-size:.88rem; letter-spacing:.34em; color:var(--gold); font-weight:600 }
+.kd__role{ margin-top:1rem; font-size:1.1rem; color:var(--text-2); font-weight:600 }
+.kd__back{ transform:rotateY(180deg); background:var(--navy); color:#fff; border-color:var(--navy) }
+.kd__back p{ font-size:1.18rem; line-height:2; color:rgba(255,255,255,.92);
+  font-family:var(--font-jp) }
+.kd__hint{ position:absolute; top:.75rem; right:.9rem; font-size:.72rem; letter-spacing:.14em;
+  color:var(--gold); background:rgba(184,138,68,.12); border:1px solid rgba(184,138,68,.4);
+  padding:.18rem .6rem; border-radius:20px; z-index:2 }
+
+/* ============ EVOLUTION ============ */
+.evo{ position:relative; margin-top:2.4rem }
+.evo__line{ position:absolute; left:6%; right:6%; top:68px; height:2px;
+  background:linear-gradient(90deg,var(--border),var(--navy-light),var(--gold));
+  transform:scaleX(0); transform-origin:left; transition:transform 1.4s var(--ease) .3s }
+.slide.is-active .evo__line{ transform:scaleX(1) }
+.evo__row{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.3rem; position:relative }
+.evo__step{ text-align:center }
+.evo__img{ height:104px; display:flex; align-items:center; justify-content:center; margin-bottom:.9rem }
+.evo__img img{ max-height:104px; width:auto }
+.evo__dot{ width:14px; height:14px; border-radius:50%; background:var(--gold);
+  margin:0 auto .9rem; box-shadow:0 0 0 5px rgba(184,138,68,.16) }
+.evo__era{ font-size:.8rem; letter-spacing:.22em; color:var(--gold); font-weight:600 }
+.evo__name{ font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.5rem; margin:.3rem 0 .5rem }
+.evo__tx{ font-size:.98rem; color:var(--text-2); line-height:1.85 }
+.evo__now{ display:inline-block; margin-top:.45rem; font-size:.76rem; font-weight:700;
+  color:#fff; background:var(--green); padding:.14rem .7rem; border-radius:20px; letter-spacing:.1em }
+.evo__foot{ text-align:center; margin-top:2rem; font-family:var(--font-display); font-size:1.5rem; color:var(--navy) }
+
+/* ============ PILLARS ============ */
+.pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.2rem }
+.pillar{ position:relative; border-radius:18px; overflow:hidden; padding:1.9rem 1.7rem 1.7rem;
+  background:#fff; border:1px solid var(--border);
+  box-shadow:0 16px 40px -32px rgba(11,31,58,.5) }
+.pillar:hover{ box-shadow:0 26px 50px -26px rgba(11,31,58,.55) }
+.pillar__bar{ position:absolute; top:0; left:0; right:0; height:6px }
+.pillar--1 .pillar__bar{ background:var(--navy) }
+.pillar--2 .pillar__bar{ background:var(--green) }
+.pillar--3 .pillar__bar{ background:var(--gold) }
+.pillar__img{ height:100px; display:flex; align-items:center; justify-content:center; margin-bottom:.9rem }
+.pillar__img img{ max-height:100px; width:auto }
+.pillar__no{ font-family:var(--font-jp); font-size:.9rem; color:var(--gold); letter-spacing:.22em; font-weight:700 }
+.pillar__copy{ font-family:var(--font-display); font-weight:900; font-size:1.8rem; line-height:1.45; margin:.3rem 0 .5rem }
+.pillar--1 .pillar__copy{ color:var(--navy) }
+.pillar--2 .pillar__copy{ color:var(--green) }
+.pillar--3 .pillar__copy{ color:var(--gold) }
+.pillar__name{ font-size:1.05rem; font-weight:700; color:var(--text) }
+.pillar__tx{ font-size:.95rem; color:var(--text-2); line-height:1.85; margin-top:.55rem }
+
+/* ============ SERVICE（縦書きフレーズ） ============ */
+.svc{ display:grid; grid-template-columns:auto 1fr 1fr; gap:2.6rem; align-items:center }
+.svc--rev{ grid-template-columns:1fr auto 1fr }
+.svc__tate{
+  writing-mode:vertical-rl; font-family:var(--font-display); font-weight:800;
+  font-size:clamp(1.4rem,2.2vw,1.9rem); letter-spacing:.3em; line-height:1.6;
+  padding-left:1rem; border-left:2px solid;
+  align-self:center; max-height:420px;
+}
+.svc--navy .svc__tate{ color:var(--navy-mid); border-color:var(--navy-mid) }
+.svc--green .svc__tate{ color:var(--green); border-color:var(--green) }
+.svc--gold .svc__tate{ color:var(--gold); border-color:var(--gold) }
+.svc__img{ display:flex; justify-content:center; align-items:center }
+.svc__img img{ max-width:460px; width:100%;
+  filter:drop-shadow(0 28px 44px rgba(11,31,58,.22)) }
+.svc__big{ font-family:var(--font-display); font-weight:900; font-size:clamp(2.4rem,4vw,3.4rem);
+  line-height:1.38; margin:.3rem 0 .4rem; color:var(--navy) }
+.svc--green .rule{ background:var(--green) }
+.svc--gold .rule{ background:var(--gold) }
+.chips{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.4rem }
+.chip{ font-size:.95rem; padding:.5rem 1.15rem; border-radius:30px; border:1px solid var(--border);
+  color:var(--text-2); background:#fff }
+.svc--navy .chip{ border-color:rgba(18,59,99,.3) }
+.svc--green .chip{ border-color:rgba(47,107,79,.32); color:var(--green) }
+.svc--gold .chip{ border-color:rgba(184,138,68,.38); color:var(--gold) }
+
+/* ============ MISO SPECIAL 扉 ============ */
+.miso-hero{ position:absolute; inset:0; z-index:0 }
+.miso-hero img{ width:100%; height:100%; object-fit:cover }
+.miso-hero::after{ content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg, rgba(36,21,16,.94) 0%, rgba(36,21,16,.72) 45%, rgba(36,21,16,.25) 100%),
+             linear-gradient(0deg, rgba(36,21,16,.85), transparent 45%) }
+.mh__label{ display:inline-block; font-size:.92rem; letter-spacing:.4em; color:var(--miso-soft);
+  border:1px solid rgba(232,201,160,.5); padding:.45rem 1.2rem; margin-bottom:2rem }
+.mh__title{ font-family:var(--font-display); font-weight:900; color:#fff;
+  font-size:clamp(3.4rem,9.5vw,7.2rem); line-height:1.15; letter-spacing:.06em }
+.mh__copy{ font-family:var(--font-display); color:var(--miso-soft);
+  font-size:clamp(1.4rem,2.6vw,2rem); letter-spacing:.12em; margin-top:1.4rem }
+.mh__sub{ color:rgba(255,255,255,.75); font-size:1.05rem; margin-top:1.2rem; line-height:2 }
+.mh__partners{ display:flex; align-items:center; gap:1.2rem; margin-top:1.8rem; flex-wrap:wrap }
+.mh__pname{ font-family:var(--font-jp); font-weight:700; color:#fff; font-size:1.15rem; letter-spacing:.08em }
+.mh__x{ color:var(--miso-soft); font-size:1.3rem; font-weight:700 }
+.mh__tate{
+  position:absolute; right:4vw; top:50%; transform:translateY(-50%); z-index:3;
+  writing-mode:vertical-rl; font-family:var(--font-display); font-weight:700;
+  color:rgba(255,255,255,.85); font-size:1.2rem; letter-spacing:.44em;
+  border-right:1px solid rgba(232,201,160,.5); padding-right:1.1rem;
+  text-shadow:0 2px 16px rgba(0,0,0,.6);
+}
+
+/* ============ MISO STORY ============ */
+.mstory{ display:grid; grid-template-columns:auto 1fr; gap:3.4rem; align-items:start }
+.mstory__tate{
+  writing-mode:vertical-rl; font-family:var(--font-display); font-weight:900;
+  color:#fff; font-size:clamp(2.2rem,3.6vw,3.2rem); letter-spacing:.24em; line-height:1.4;
+  border-left:2px solid var(--miso-soft); padding-left:1.4rem; max-height:480px;
+}
+.msteps{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.3rem }
+.mstep{ position:relative; padding-top:1rem }
+.mstep:nth-child(2){ transform:translateY(26px) }
+.mstep:nth-child(3){ transform:translateY(52px) }
+.mstep:nth-child(4){ transform:translateY(78px) }
+.mstep__no{ font-family:var(--font-display); font-weight:900; font-size:3.4rem; line-height:1;
+  color:transparent; -webkit-text-stroke:1.5px var(--miso-soft); margin-bottom:.7rem }
+.mstep__t{ font-family:var(--font-display); font-weight:800; color:#fff; font-size:1.4rem; margin-bottom:.5rem }
+.mstep__x{ font-size:.95rem; color:rgba(255,255,255,.75); line-height:1.9 }
+.mnums{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:5.6rem }
+.mnum{ border-top:1px solid rgba(232,201,160,.35); padding-top:1rem }
+.mnum__v{ font-family:var(--font-display); font-weight:900; color:var(--miso-soft);
+  font-size:clamp(2.2rem,4vw,3.2rem); line-height:1.05; display:flex; align-items:baseline; gap:.25rem }
+.mnum__u{ font-size:1.1rem; font-weight:700 }
+.mnum__l{ font-size:.92rem; color:rgba(255,255,255,.7); margin-top:.4rem; letter-spacing:.04em }
+
+/* ============ MISO USECASES ============ */
+.mu{ display:grid; grid-template-columns:1.05fr .95fr; gap:3rem; align-items:center }
+.collage{ position:relative; height:478px }
+.polaroid{ position:absolute; background:#fff; padding:.8rem .8rem 2.4rem;
+  box-shadow:0 24px 50px -22px rgba(11,31,58,.55); border-radius:4px }
+.polaroid img{ width:100%; height:100%; object-fit:cover; border-radius:2px }
+.polaroid__cap{ position:absolute; bottom:.55rem; left:0; right:0; text-align:center;
+  font-family:var(--font-jp); font-size:.85rem; color:var(--text-2); letter-spacing:.08em }
+.quote{ font-family:var(--font-display); font-weight:800; color:var(--navy);
+  font-size:clamp(1.6rem,2.7vw,2.2rem); line-height:1.55; position:relative; margin-bottom:1.2rem }
+.quote::before{ content:"“"; position:absolute; left:-1.4rem; top:-2.4rem;
+  font-size:5.4rem; color:var(--gold); opacity:.35; font-family:Georgia,serif }
+.ucase{ display:flex; gap:1.1rem; align-items:baseline; padding:.68rem 0;
+  border-bottom:1px solid var(--border) }
+.ucase__t{ font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.2rem; white-space:nowrap }
+.ucase__x{ font-size:.95rem; color:var(--text-2) }
+
+/* ============ MEDIA ============ */
+.media{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.1rem; margin-top:1.4rem }
+.mcard{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.15rem 1.35rem;
+  box-shadow:0 14px 34px -28px rgba(11,31,58,.5) }
+.mcard__date{ font-size:.85rem; color:var(--gold); font-weight:600; letter-spacing:.1em }
+.mcard__outlet{ font-family:var(--font-display); font-weight:800; color:var(--navy); font-size:1.3rem; margin:.35rem 0 .3rem }
+.mcard__tx{ font-size:.95rem; color:var(--text-2); line-height:1.7 }
+.mcard__cat{ display:inline-block; margin-top:.6rem; font-size:.78rem; letter-spacing:.12em;
+  border:1px solid var(--border); color:var(--text-2); padding:.16rem .65rem; border-radius:20px }
+
+/* ============ VISION / CLOSING ============ */
+.vision{ text-align:center; max-width:880px; margin:0 auto }
+.vision__big{ font-family:var(--font-display); font-weight:900; color:#fff;
+  font-size:clamp(2.8rem,6.4vw,4.6rem); line-height:1.4; letter-spacing:.05em }
+.vision__next{ margin-top:2rem; font-family:var(--font-display); font-size:1.9rem;
+  color:var(--gold-soft); letter-spacing:.16em }
+.closing{ text-align:center }
+.closing__logo{ width:270px; margin:0 auto 2rem }
+.closing__title{ font-family:var(--font-display); font-weight:900; color:#fff;
+  font-size:clamp(2.6rem,5.4vw,4rem); line-height:1.4 }
+.closing__contact{ display:flex; gap:3.2rem; justify-content:center; flex-wrap:wrap; margin-top:2.6rem;
+  color:rgba(255,255,255,.85); font-size:1.05rem }
+.closing__contact b{ display:block; font-family:var(--font-display); color:var(--gold-soft);
+  font-size:2.1rem; letter-spacing:.06em; margin-top:.25rem }
+.closing__thanks{ margin-top:2.8rem; font-size:1rem; letter-spacing:.4em; color:rgba(255,255,255,.6) }
+
+.confetti{ position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden }
+.confetti i{ position:absolute; top:-12vh; width:9px; height:13px; opacity:.9;
+  animation:fall linear forwards }
+@keyframes fall{ to{ transform:translateY(118vh) rotate(720deg); opacity:.85 } }
+
+/* ============ FIXED UI ============ */
+.brandmark{ position:fixed; top:1.6rem; left:2rem; z-index:60; display:flex; align-items:center; gap:.6rem }
+.brandmark img{ height:30px }
+.brandmark span{ font-family:var(--font-jp); font-size:.95rem; letter-spacing:.18em; color:var(--navy); font-weight:700 }
+.slide-theme-dark .brandmark span{ color:#fff }
+.slide-theme-dark .brandmark img{ filter:brightness(0) invert(1) }
+
+.side-label{ position:fixed; left:1.1rem; top:50%; transform:translateY(-50%); z-index:55;
+  writing-mode:vertical-rl; font-size:.7rem; letter-spacing:.42em; color:rgba(11,31,58,.4);
+  pointer-events:none; user-select:none }
+.slide-theme-dark .side-label{ color:rgba(255,255,255,.35) }
+
+.progress{ position:fixed; top:0; left:0; height:4px; background:var(--gold); z-index:70;
+  width:0; transition:width .5s var(--ease) }
+
+.dots{ position:fixed; right:1.7rem; top:50%; transform:translateY(-50%); z-index:60;
+  display:flex; flex-direction:column; gap:.8rem }
+.dots button{ width:9px; height:9px; border-radius:50%; border:0; cursor:pointer; padding:0;
+  background:rgba(11,31,58,.22); transition:all .35s var(--ease) }
+.dots button:hover{ background:rgba(11,31,58,.5) }
+.dots button.on{ background:var(--gold); transform:scale(1.5) }
+.slide-theme-dark .dots button{ background:rgba(255,255,255,.28) }
+.slide-theme-dark .dots button.on{ background:var(--gold-soft) }
+
+.hud{ position:fixed; left:2rem; bottom:1.5rem; z-index:60; display:flex; align-items:center; gap:1.1rem }
+.counter{ font-size:.95rem; color:var(--text-2); letter-spacing:.08em }
+.counter b{ font-family:var(--font-display); color:var(--navy); font-size:1.4rem }
+.slide-theme-dark .counter{ color:rgba(255,255,255,.6) }
+.slide-theme-dark .counter b{ color:#fff }
+.cmyk{ display:flex; gap:.4rem; align-items:center }
+.cmyk i{ width:8px; height:8px; border-radius:50%; background:var(--c); opacity:.75 }
+
+.ctrl{ position:fixed; right:1.7rem; bottom:1.4rem; z-index:60; display:flex; gap:.55rem }
+.ctrl button{ width:42px; height:42px; border-radius:10px; border:1px solid var(--border);
+  background:rgba(255,255,255,.85); color:var(--navy); cursor:pointer; display:flex;
+  align-items:center; justify-content:center; font-size:1.05rem; transition:all .3s var(--ease) }
+.ctrl button:hover{ background:var(--navy); color:#fff; border-color:var(--navy) }
+.slide-theme-dark .ctrl button{ background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.25) }
+.slide-theme-dark .ctrl button:hover{ background:var(--gold); border-color:var(--gold); color:var(--navy) }
+
+.scrollhint{ position:absolute; left:50%; bottom:1.4rem; transform:translateX(-50%); z-index:5;
+  font-size:.78rem; letter-spacing:.3em; color:rgba(255,255,255,.6); text-align:center;
+  animation:bob 2s ease-in-out infinite }
+.scrollhint span{ display:block; font-size:1.1rem; margin-top:.2rem }
+@keyframes bob{ 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+.crops{ position:fixed; inset:16px; z-index:55; pointer-events:none; --c:rgba(11,31,58,.3);
+  background-image:
+    linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),
+    linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),
+    linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),
+    linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c));
+  background-size:18px 1px,1px 18px,18px 1px,1px 18px,18px 1px,1px 18px,18px 1px,1px 18px;
+  background-position:0 0,0 0,100% 0,100% 0,0 100%,0 100%,100% 100%,100% 100%;
+  background-repeat:no-repeat }
+.slide-theme-dark .crops{ --c:rgba(255,255,255,.25) }
+
+/* ============ CURSOR GIMMICKS ============ */
+#fx-canvas{ position:fixed; inset:0; z-index:150; pointer-events:none }
+.cur-dot{ position:fixed; left:0; top:0; width:8px; height:8px; border-radius:50%;
+  background:var(--gold); z-index:200; pointer-events:none;
+  transform:translate(-50%,-50%); opacity:0; transition:opacity .3s }
+.slide-theme-dark .cur-dot{ background:var(--gold-soft); box-shadow:0 0 10px rgba(217,184,115,.8) }
+.cur-ring{ position:fixed; left:0; top:0; width:46px; height:46px; z-index:199; pointer-events:none;
+  transform:translate(-50%,-50%); opacity:0;
+  transition:width .35s var(--ease), height .35s var(--ease), opacity .3s; --rc:var(--gold);
+  background-image:
+    linear-gradient(var(--rc),var(--rc)),linear-gradient(var(--rc),var(--rc)),
+    linear-gradient(var(--rc),var(--rc)),linear-gradient(var(--rc),var(--rc)),
+    linear-gradient(var(--rc),var(--rc)),linear-gradient(var(--rc),var(--rc)),
+    linear-gradient(var(--rc),var(--rc)),linear-gradient(var(--rc),var(--rc));
+  background-size:12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px,12px 1.5px,1.5px 12px;
+  background-position:0 0,0 0,100% 0,100% 0,0 100%,0 100%,100% 100%,100% 100%;
+  background-repeat:no-repeat }
+.cur-ring.hover{ width:70px; height:70px }
+.slide-theme-dark .cur-ring{ --rc:var(--gold-soft) }
+
+.seal{ position:fixed; z-index:160; pointer-events:none; width:82px; height:82px;
+  border:3.5px solid var(--shu); color:var(--shu); border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:var(--font-display); font-weight:900; font-size:2.9rem; line-height:1;
+  mix-blend-mode:multiply; opacity:0;
+  transform:translate(-50%,-50%) rotate(var(--rot,0deg)) scale(1.9);
+  animation:sealIn 1.5s var(--ease) forwards }
+.slide-theme-dark .seal{ mix-blend-mode:normal; border-color:var(--gold-soft); color:var(--gold-soft) }
+@keyframes sealIn{
+  10%{ opacity:.95; transform:translate(-50%,-50%) rotate(var(--rot,0deg)) scale(1) }
+  60%{ opacity:.9 }
+  100%{ opacity:0; transform:translate(-50%,-50%) rotate(var(--rot,0deg)) scale(.97) }
+}
+
+/* ===== responsive ===== */
+@media (max-width:900px){
+  .slide{ padding:4.2rem 6vw 4.2rem }
+  .cover-flex{ flex-direction:column; align-items:flex-start; justify-content:center; gap:2rem }
+  .cover__vtitle{ writing-mode:horizontal-tb; font-size:clamp(2.6rem,12vw,4.2rem); margin:0 }
+  .agenda,.kd-grid,.pillars,.evo__row,.media,.msteps,.mnums,.mu{ grid-template-columns:1fr; gap:1.3rem }
+  .svc,.svc--rev{ grid-template-columns:1fr; gap:1.4rem }
+  .svc__tate,.mstory__tate{ writing-mode:horizontal-tb; border-left:none; border-bottom:2px solid; padding:0 0 .6rem; max-height:none }
+  .mstory{ grid-template-columns:1fr; gap:1.6rem }
+  .mstep:nth-child(n){ transform:none }
+  .mnums{ grid-template-columns:repeat(2,1fr); margin-top:1.8rem }
+  .stats{ grid-template-columns:repeat(2,1fr); max-width:none }
+  .about-photo{ display:none }
+  .about-content{ width:100% }
+  .kd-grid{ display:none }
+  .kd-mobile{ display:grid !important; gap:1rem; margin-top:2rem }
+  .evo__line{ display:none }
+  .svc--rev .svc__img{ order:-1 }
+  .dots,.side-label{ display:none }
+  .closing__contact{ gap:1.6rem }
+  .collage{ height:auto; display:grid; grid-template-columns:1fr 1fr; gap:1rem }
+  .polaroid{ position:static; transform:none !important }
+  .mh__tate{ display:none }
+  .wm{ font-size:clamp(4rem,18vw,7rem) }
+  .wm--num{ font-size:clamp(7rem,30vw,10rem) }
+}
+.kd-mobile{ display:none }
+.kd-mobile .kdm{ background:#fff; border:1px solid var(--border); border-radius:14px; padding:1.2rem 1.3rem;
+  display:flex; gap:1.1rem; align-items:flex-start }
+.kd-mobile .kdm b{ font-family:var(--font-display); font-size:2.4rem; color:var(--navy); line-height:1 }
+.kd-mobile .kdm p{ font-size:1rem; color:var(--text-2); line-height:1.8 }
+
+/* 低背ビューポート（小型ラップトップ・全画面）向けの圧縮 */
+@media (min-width:901px) and (max-height:780px){
+  .slide{ padding-top:3.3rem; padding-bottom:2.5rem }
+  .s-title{ font-size:clamp(2rem,4.4vw,3.3rem) }
+  .pillar__img{ height:82px } .pillar__img img{ max-height:82px }
+  .evo__img{ height:84px } .evo__img img{ max-height:84px }
+  .kd{ height:236px } .kd__kanji{ font-size:4.4rem }
+  .collage{ height:430px }
+  .stats{ margin-top:1.1rem }
+  .media{ margin-top:1.1rem } .mcard{ padding:.95rem 1.25rem }
+  .mnums{ margin-top:2.4rem }
+  .mstep:nth-child(2){ transform:translateY(18px) }
+  .mstep:nth-child(3){ transform:translateY(36px) }
+  .mstep:nth-child(4){ transform:translateY(54px) }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{ animation-duration:.001s !important; transition-duration:.001s !important }
+  .fx{ opacity:1; transform:none }
+}
+</style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L12PKW9MNB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L12PKW9MNB');
+  </script>
+</head>
+<body>
+
+<!-- ===== Fixed UI ===== -->
+<div class="brandmark"><img src="images/logo.png" alt="岡田印刷"><span>OKADA PRINTING</span></div>
+<div class="progress" id="progress"></div>
+<div class="crops" aria-hidden="true"></div>
+<div class="side-label" aria-hidden="true">OKADA PRINTING ・ COMPANY DECK ・ 2026</div>
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+<nav class="dots" id="dots" aria-label="スライドナビゲーション"></nav>
+<div class="hud">
+  <div class="counter"><b id="cur">01</b> <span id="total">/ 15</span></div>
+  <div class="cmyk" aria-hidden="true"><i style="--c:#00AEEF"></i><i style="--c:#EC008C"></i><i style="--c:#FFD400"></i><i style="--c:#1A1A2E"></i></div>
+</div>
+<div class="ctrl">
+  <button id="prev" aria-label="前へ" title="前へ（↑/←）">&#8593;</button>
+  <button id="next" aria-label="次へ" title="次へ（↓/→/Space）">&#8595;</button>
+  <button id="fs" aria-label="全画面" title="全画面（F）">&#9974;</button>
+</div>
+
+<div class="deck" id="deck">
+
+  <!-- ===== 01 COVER ===== -->
+  <section class="slide slide--dark grain" data-theme="dark">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="hidden-word" aria-hidden="true">KATADORU</div>
+    <div class="spot" aria-hidden="true"></div>
+    <img class="float-img" src="images/star_navy_transparent.png" alt="" style="top:16%;left:10%;width:64px">
+    <img class="float-img" src="images/moon_navy_transparent.png" alt="" style="top:20%;right:30%;width:90px;animation-delay:-3s">
+    <img class="float-img" src="images/japanese_castle_navy_transparent.png" alt="" style="bottom:10%;left:6%;width:130px;animation-delay:-5s;opacity:.1">
+    <div class="slide__inner">
+      <div class="cover-flex">
+        <div class="cover__left">
+          <div class="cover__year">EST. 1917 — OKAZAKI, AICHI</div>
+          <div class="cover__tag">COMPANY &amp; BUSINESS GUIDE</div>
+          <div class="cover__company">株式会社岡田印刷<br>会社・事業紹介</div>
+          <p class="cover__sub">OKADA PRINTING CO., LTD.</p>
+          <div class="cover__hint">カーソルで文字を「かたどって」みてください<br>クリックで、印を。</div>
+        </div>
+        <h1 class="cover__vtitle"><span data-stamp>価値を、</span><span class="k" data-stamp>かたどる。</span></h1>
+      </div>
+    </div>
+    <div class="scrollhint">SCROLL / 矢印キー<span>&#8595;</span></div>
+  </section>
+
+  <!-- ===== 02 AGENDA ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">INDEX</div>
+    <div class="slide__inner">
+      <span class="eyebrow fx">AGENDA</span>
+      <h2 class="s-title fx d1">本日、お伝えすること</h2>
+      <div class="rule fx d1"></div>
+      <div class="agenda">
+        <div class="agenda__item fx d2"><span class="agenda__no">01</span><span class="agenda__tx"><b>私たちについて</b><span>WHO WE ARE / 1917年、岡崎から</span></span></div>
+        <div class="agenda__item fx d2"><span class="agenda__no">02</span><span class="agenda__tx"><b>「かたどる」という思想</b><span>OUR PHILOSOPHY</span></span></div>
+        <div class="agenda__item fx d3"><span class="agenda__no">03</span><span class="agenda__tx"><b>印刷の進化と、現在地</b><span>OUR STORY</span></span></div>
+        <div class="agenda__item fx d3"><span class="agenda__no">04</span><span class="agenda__tx"><b>3つの事業</b><span>OUR SERVICES</span></span></div>
+        <div class="agenda__item fx d4"><span class="agenda__no">05</span><span class="agenda__tx"><b>特集・八丁味噌紙</b><span>SPECIAL FEATURE / 400年の伝統が紙になった</span></span></div>
+        <div class="agenda__item fx d4"><span class="agenda__no">06</span><span class="agenda__tx"><b>メディアと、これからのビジョン</b><span>MEDIA &amp; VISION</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 ABOUT ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="about-photo" aria-hidden="true">
+      <img src="images/okazaki_castle_photo.jpg" alt="">
+      <div class="about-photo__tate">徳川家康公生誕の地・岡崎</div>
+    </div>
+    <div class="wm" aria-hidden="true" style="right:auto;left:1vw">OKAZAKI</div>
+    <div class="slide__inner">
+      <div class="about-content">
+        <span class="eyebrow fx">WHO WE ARE</span>
+        <h2 class="s-title s-title--sm fx d1">1917年、岡崎で生まれた<br>印刷会社です。</h2>
+        <div class="rule fx d1"></div>
+        <p class="s-lead fx d2" style="font-size:1.08rem;max-width:560px">八丁味噌、三河木綿、石材——脈々と続く地域のものづくりの中で、岡田印刷は大正6年に創業しました。</p>
+        <div class="stats">
+          <div class="stat tilt fx d3"><div class="stat__n"><span data-count="1917" data-dur="1600" data-raw="1">1917</span></div><div class="stat__l">創業（大正6年）</div></div>
+          <div class="stat tilt fx d3"><div class="stat__n"><span data-count="109">0</span><span class="stat__u">年</span></div><div class="stat__l">地域とともに歩んだ歴史</div></div>
+          <div class="stat tilt fx d4"><div class="stat__n"><span data-count="3">0</span><span class="stat__u">事業</span></div><div class="stat__l">印刷を原点に広がる領域</div></div>
+          <div class="stat tilt fx d4"><div class="stat__n"><span data-count="1">0</span><span class="stat__u">理念</span></div><div class="stat__l">価値を、かたどる。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04 KATADORU ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">PHILOSOPHY</div>
+    <div class="slide__inner">
+      <div style="text-align:center">
+        <span class="eyebrow fx" style="margin-left:auto;margin-right:auto">OUR PHILOSOPHY</span>
+        <h2 class="s-title fx d1">「かたどる」には、三つの意味。</h2>
+        <div class="rule rule--c fx d1"></div>
+        <p class="s-lead fx d2" style="max-width:760px;margin:0 auto;font-size:1.05rem">印刷とは、想いや情報に形を与え、人へ届け、時代に残していく仕事。<span style="color:var(--gold);font-weight:600">（カードにマウスを）</span></p>
+      </div>
+      <div class="kd-grid">
+        <div class="kd fx d3"><span class="kd__hint">HOVER</span><div class="kd__inner">
+          <div class="kd__face kd__front"><div class="kd__kanji">象</div><div class="kd__yomi">KATADORU</div><div class="kd__role">無形を、形にする</div></div>
+          <div class="kd__face kd__back"><p>声や想いなど、<br>無形なモノやコトを<br>目に見える形へと<br>「象る」。</p></div>
+        </div></div>
+        <div class="kd fx d4"><span class="kd__hint">HOVER</span><div class="kd__inner">
+          <div class="kd__face kd__front"><div class="kd__kanji">模</div><div class="kd__yomi">KATADORU</div><div class="kd__role">本質を、写し取る</div></div>
+          <div class="kd__face kd__back"><p>物事の本質を<br>写し取り、<br>伝わる形へと<br>「模る」。</p></div>
+        </div></div>
+        <div class="kd fx d5"><span class="kd__hint">HOVER</span><div class="kd__inner">
+          <div class="kd__face kd__front"><div class="kd__kanji">型</div><div class="kd__yomi">KATADORU</div><div class="kd__role">未来へ、残す</div></div>
+          <div class="kd__face kd__back"><p>再現性のある形として<br>時代を超えて<br>未来へ残す<br>「型取る」。</p></div>
+        </div></div>
+      </div>
+      <div class="kd-mobile">
+        <div class="kdm fx"><b>象</b><p><strong>無形を、形にする。</strong><br>声や想いを、目に見える形へ。</p></div>
+        <div class="kdm fx"><b>模</b><p><strong>本質を、写し取る。</strong><br>物事の本質を、伝わる形へ。</p></div>
+        <div class="kdm fx"><b>型</b><p><strong>未来へ、残す。</strong><br>再現性ある形として時代を超えて。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 05 EVOLUTION ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">STORY</div>
+    <div class="slide__inner">
+      <div style="text-align:center">
+        <span class="eyebrow fx" style="margin-left:auto;margin-right:auto">OUR STORY</span>
+        <h2 class="s-title fx d1">印刷の価値を、未来へつなぐ。</h2>
+        <div class="rule rule--c fx d1"></div>
+      </div>
+      <div class="evo">
+        <div class="evo__line"></div>
+        <div class="evo__row">
+          <div class="evo__step fx d2">
+            <div class="evo__img"><img src="images/kappan_print_navy_transparent.png" alt="活版印刷"></div>
+            <div class="evo__dot"></div>
+            <div class="evo__era">CHAPTER 01</div>
+            <div class="evo__name">活版印刷</div>
+            <div class="evo__tx">一文字ずつ拾い、紙に刻む。情報を人へ届ける手段の始まり。</div>
+          </div>
+          <div class="evo__step fx d3">
+            <div class="evo__img"><img src="images/offset_printer_navy_transparent.png" alt="オフセット印刷機"></div>
+            <div class="evo__dot"></div>
+            <div class="evo__era">CHAPTER 02</div>
+            <div class="evo__name">オフセット印刷</div>
+            <div class="evo__tx">機械が色を載せ、新聞・書籍・ポスターへ。情報が一気に広がる。</div>
+          </div>
+          <div class="evo__step fx d4">
+            <div class="evo__img"><img src="images/copy_machine_navy_transparent.png" alt="オンデマンド機"></div>
+            <div class="evo__dot"></div>
+            <div class="evo__era">CHAPTER 03</div>
+            <div class="evo__name">オンデマンド機</div>
+            <div class="evo__tx">少部数・短納期へ。一人ひとりに合わせた「届け方」。<span class="evo__now">now</span></div>
+          </div>
+          <div class="evo__step fx d5">
+            <div class="evo__img"><img src="images/PC_navy_transparent.png" alt="生成AI"></div>
+            <div class="evo__dot"></div>
+            <div class="evo__era">CHAPTER 04</div>
+            <div class="evo__name">生成AI</div>
+            <div class="evo__tx">超情報化社会の到来。新たな次元の情報技術。<span class="evo__now">now</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="evo__foot fx d6">時代とともに変わる「届け方」を、<em class="accent">かたどり</em>続けてきました。</p>
+    </div>
+  </section>
+
+  <!-- ===== 06 PILLARS ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">SERVICES</div>
+    <div class="slide__inner">
+      <div style="text-align:center">
+        <span class="eyebrow fx" style="margin-left:auto;margin-right:auto">OUR SERVICES</span>
+        <h2 class="s-title fx d1">3つの事業で、価値をかたどる。</h2>
+        <div class="rule rule--c fx d1"></div>
+      </div>
+      <div class="pillars">
+        <div class="pillar pillar--1 tilt fx d3"><div class="pillar__bar"></div>
+          <div class="pillar__img"><img src="images/svc_communication.png" alt=""></div>
+          <div class="pillar__no">SERVICE 01</div>
+          <div class="pillar__copy">企業の想いを、<br>かたどる。</div>
+          <div class="pillar__name">コミュニケーションデザイン事業</div>
+          <p class="pillar__tx">チラシ・パンフレット・名刺・冊子・記念誌・販促物まで。伝えたい価値を紙で形にします。</p>
+        </div>
+        <div class="pillar pillar--2 tilt fx d4"><div class="pillar__bar"></div>
+          <div class="pillar__img"><img src="images/svc_local_brand.png" alt=""></div>
+          <div class="pillar__no">SERVICE 02</div>
+          <div class="pillar__copy">地域の物語を、<br>かたどる。</div>
+          <div class="pillar__name">地域資源ブランド化事業</div>
+          <p class="pillar__tx">地域素材や加工残渣を紙へアップサイクル。地域の物語を纏った紙を作ります。</p>
+        </div>
+        <div class="pillar pillar--3 tilt fx d5"><div class="pillar__bar"></div>
+          <div class="pillar__img"><img src="images/svc_ai_support.png" alt=""></div>
+          <div class="pillar__no">SERVICE 03</div>
+          <div class="pillar__copy">情報と知恵を、<br>かたどる。</div>
+          <div class="pillar__name">生成AI活用支援事業</div>
+          <p class="pillar__tx">生成AIを実務で使う研修・導入支援・業務改善。情報整理から発信まで設計します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 07 SERVICE 1 ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm wm--num" aria-hidden="true">01</div>
+    <div class="slide__inner">
+      <div class="svc svc--navy">
+        <div class="svc__tate fx">企業の想いを、かたどる。</div>
+        <div>
+          <span class="eyebrow fx">SERVICE 01</span>
+          <h2 class="svc__big fx d1">コミュニケーション<br>デザイン事業</h2>
+          <div class="rule fx d1"></div>
+          <p class="s-lead fx d2">企業や団体の伝えたいことを、紙媒体を中心としたコミュニケーションツールへと整えます。企画・デザイン・印刷・加工までを一貫して支援。</p>
+          <div class="chips fx d3">
+            <span class="chip">チラシ</span><span class="chip">パンフレット</span><span class="chip">名刺</span><span class="chip">DM</span><span class="chip">冊子</span><span class="chip">記念誌</span><span class="chip">販促物</span>
+          </div>
+        </div>
+        <div class="svc__img fx d2"><img src="images/svc_hero_communication.png" alt="コミュニケーションデザイン事業"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 08 SERVICE 2 ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm wm--num" aria-hidden="true" style="right:auto;left:2vw">02</div>
+    <div class="slide__inner">
+      <div class="svc svc--rev svc--green">
+        <div class="svc__img fx d2"><img src="images/svc_hero_local_brand.png" alt="地域資源ブランド化事業"></div>
+        <div class="svc__tate fx">地域の物語を、かたどる。</div>
+        <div>
+          <span class="eyebrow fx">SERVICE 02</span>
+          <h2 class="svc__big fx d1" style="color:var(--green)">地域資源<br>ブランド化事業</h2>
+          <div class="rule fx d1"></div>
+          <p class="s-lead fx d2">地域の素材や加工残渣・副産物を、地域の物語をまとった紙へと再生。廃棄物削減、ブランド価値向上、観光PR、地域経済の循環へ。</p>
+          <div class="chips fx d3">
+            <span class="chip">アップサイクル</span><span class="chip">廃棄物削減</span><span class="chip">ブランド化</span><span class="chip">観光・PR</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 09 SERVICE 3 ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm wm--num" aria-hidden="true">03</div>
+    <div class="slide__inner">
+      <div class="svc svc--gold">
+        <div class="svc__tate fx">情報と知恵を、かたどる。</div>
+        <div>
+          <span class="eyebrow fx">SERVICE 03</span>
+          <h2 class="svc__big fx d1" style="color:var(--gold)">生成AI<br>活用支援事業</h2>
+          <div class="rule fx d1"></div>
+          <p class="s-lead fx d2">中小企業や各種団体に向けた、生成AIの研修・セミナー・導入支援。文章作成・情報整理・企画立案など、日々の仕事にすぐ使える形で設計します。</p>
+          <div class="chips fx d3">
+            <span class="chip">研修・セミナー</span><span class="chip">導入支援</span><span class="chip">業務改善</span><span class="chip">資料作成</span>
+          </div>
+        </div>
+        <div class="svc__img fx d2"><img src="images/svc_hero_ai_support.png" alt="生成AI活用支援事業"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 10 MISO 扉 ===== -->
+  <section class="slide grain" data-theme="dark" style="background:var(--miso)">
+    <div class="miso-hero" aria-hidden="true"><img src="images/web/miso_03.jpg" alt=""></div>
+    <div class="spot" aria-hidden="true"></div>
+    <div class="mh__tate" aria-hidden="true">木桶仕込み、二夏二冬の熟成を経て</div>
+    <div class="slide__inner">
+      <span class="mh__label fx">SPECIAL FEATURE ・ FLAGSHIP PROJECT</span>
+      <h2 class="mh__title fx d1">八丁味噌紙</h2>
+      <p class="mh__copy fx d2">——四百年の伝統が、紙になった。</p>
+      <p class="mh__sub fx d3">愛知県岡崎市発・史上初の再生紙プロジェクト。<br>製造過程で生まれる規格外の味噌「蓋味噌」を、製紙工程で再利用。<br>温かみのある色合い、ほのかな香り、独特の質感を持つ紙が生まれました。</p>
+      <div class="mh__partners fx d4">
+        <span class="mh__pname">株式会社まるや八丁味噌</span>
+        <span class="mh__x">×</span>
+        <span class="mh__pname">株式会社岡田印刷</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 11 MISO STORY ===== -->
+  <section class="slide slide--miso grain" data-theme="dark">
+    <div class="wm" aria-hidden="true">STORY</div>
+    <div class="spot" aria-hidden="true"></div>
+    <div class="slide__inner">
+      <div class="mstory">
+        <div class="mstory__tate fx">開発ストーリー</div>
+        <div>
+          <span class="eyebrow fx" style="color:var(--miso-soft)">DEVELOPMENT STORY</span>
+          <div class="msteps" style="margin-top:.6rem">
+            <div class="mstep fx d1">
+              <div class="mstep__no">01</div>
+              <div class="mstep__t">課題の発見</div>
+              <p class="mstep__x">商品規格に乗らない「蓋味噌」。飼料利用が主で、長年その活用と向き合ってきた。</p>
+            </div>
+            <div class="mstep fx d2">
+              <div class="mstep__no">02</div>
+              <div class="mstep__t">運命の出会い</div>
+              <p class="mstep__x">両社の若手後継者がタッグ。印刷会社の専門領域「紙」という切り口で始動。</p>
+            </div>
+            <div class="mstep fx d3">
+              <div class="mstep__no">03</div>
+              <div class="mstep__t">3ヶ月の挑戦</div>
+              <p class="mstep__x">試行錯誤の末、色・香り・質感の三拍子揃った配合率15%の紙の開発に成功。</p>
+            </div>
+            <div class="mstep fx d4">
+              <div class="mstep__no">04</div>
+              <div class="mstep__t">誕生</div>
+              <p class="mstep__x">400年の伝統と現代技術が融合。残渣を価値ある製品へ、循環型社会への一歩。</p>
+            </div>
+          </div>
+          <div class="mnums">
+            <div class="mnum fx d3"><div class="mnum__v"><span data-count="100">0</span><span class="mnum__u">kg</span></div><div class="mnum__l">仕込み6tあたりの蓋味噌</div></div>
+            <div class="mnum fx d4"><div class="mnum__v"><span data-count="15">0</span><span class="mnum__u">%</span></div><div class="mnum__l">八丁味噌の配合率</div></div>
+            <div class="mnum fx d5"><div class="mnum__v"><span data-count="3">0</span><span class="mnum__u">ヶ月</span></div><div class="mnum__l">開発期間</div></div>
+            <div class="mnum fx d6"><div class="mnum__v"><span data-count="100">0</span><span class="mnum__u">枚〜</span></div><div class="mnum__l">名刺は100枚から制作可</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 12 MISO USECASES ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">USE CASES</div>
+    <div class="slide__inner">
+      <div class="mu">
+        <div class="collage">
+          <div class="polaroid tilt fx d1" style="left:0;top:8%;width:56%;height:62%;transform:rotate(-3deg)">
+            <img src="images/web/miso_13.jpg" alt="八丁味噌紙の製品">
+            <div class="polaroid__cap">八丁味噌紙と、八丁味噌。</div>
+          </div>
+          <div class="polaroid tilt fx d2" style="right:0;top:0;width:46%;height:48%;transform:rotate(2.5deg)">
+            <img src="images/hatcho_miso_card.jpeg" alt="八丁味噌紙の名刺">
+            <div class="polaroid__cap">名刺 — 話題の起点に。</div>
+          </div>
+          <div class="polaroid tilt fx d3" style="right:6%;bottom:0;width:42%;height:44%;transform:rotate(-2deg)">
+            <img src="images/web/miso_12.jpg" alt="八丁味噌紙の表彰状">
+            <div class="polaroid__cap">表彰状・登録証にも。</div>
+          </div>
+        </div>
+        <div>
+          <span class="eyebrow fx">USE CASES</span>
+          <h2 class="s-title s-title--sm fx d1">名刺から、表彰状まで。</h2>
+          <div class="rule fx d1"></div>
+          <p class="quote fx d2">「この紙、味噌で<br>できているんですか？」</p>
+          <div class="ucase fx d3"><span class="ucase__t">名刺</span><span class="ucase__x">展示会で毎回会話が生まれ、商談のつかみに。</span></div>
+          <div class="ucase fx d3"><span class="ucase__t">名刺用紙</span><span class="ucase__x">岡崎市観光協会が採用。家庭用プリンター対応。</span></div>
+          <div class="ucase fx d4"><span class="ucase__t">登録証</span><span class="ucase__x">日本商工会議所青年部 全国大会。3,000人の参加者へ。</span></div>
+          <div class="ucase fx d4"><span class="ucase__t">表彰状</span><span class="ucase__x">岡崎商工会議所青年部。卒業生への贈り物として。</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 13 MEDIA ===== -->
+  <section class="slide grain" data-theme="light">
+    <div class="wm" aria-hidden="true">MEDIA</div>
+    <div class="slide__inner">
+      <div style="text-align:center">
+        <span class="eyebrow fx" style="margin-left:auto;margin-right:auto">MEDIA</span>
+        <h2 class="s-title s-title--sm fx d1">メディアで、話題に。</h2>
+        <div class="rule rule--c fx d1"></div>
+      </div>
+      <div class="media">
+        <div class="mcard tilt fx d3"><div class="mcard__date">2026.04.07</div><div class="mcard__outlet">NHK「まるっと！」</div><div class="mcard__tx">八丁味噌紙の取り組みが特集されました。</div><span class="mcard__cat">メディア出演</span></div>
+        <div class="mcard tilt fx d3"><div class="mcard__date">2026.02.24</div><div class="mcard__outlet">中京テレビ「キャッチ！」</div><div class="mcard__tx">"なごやめし"がまさかの大変身。八丁味噌→名刺に？</div><span class="mcard__cat">メディア出演</span></div>
+        <div class="mcard tilt fx d3"><div class="mcard__date">2026.02.02</div><div class="mcard__outlet">TBS Podcast</div><div class="mcard__tx">「森本毅郎・スタンバイ！」現場にアタックで紹介。Yahoo!ニュースにも掲載。</div><span class="mcard__cat">ラジオ・WEB</span></div>
+        <div class="mcard tilt fx d4"><div class="mcard__date">2025.08.25</div><div class="mcard__outlet">テレビ愛知「5時スタ」</div><div class="mcard__tx">廃棄される八丁味噌が「紙」に大変身、名刺として加工。</div><span class="mcard__cat">メディア出演</span></div>
+        <div class="mcard tilt fx d4"><div class="mcard__date">2025.04.05</div><div class="mcard__outlet">中日新聞（1面）</div><div class="mcard__tx">400年の伝統を持つ八丁味噌の廃棄物をアップサイクル。</div><span class="mcard__cat">新聞掲載</span></div>
+        <div class="mcard tilt fx d4"><div class="mcard__date">掲載中</div><div class="mcard__outlet">brother「SDGs Story」</div><div class="mcard__tx">八丁味噌紙の取り組みをWEBで特集いただきました。</div><span class="mcard__cat">WEB掲載</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 14 VISION ===== -->
+  <section class="slide slide--dark grain" data-theme="dark">
+    <div class="hidden-word" aria-hidden="true">次の百年へ</div>
+    <div class="spot" aria-hidden="true"></div>
+    <div class="slide__inner">
+      <div class="vision">
+        <span class="eyebrow fx" style="margin-left:auto;margin-right:auto">OUR VISION</span>
+        <h2 class="vision__big fx d1">地域発の価値創造モデルを、<br>全国へ広げる。</h2>
+        <div class="rule rule--c fx d1" style="background:var(--gold-soft)"></div>
+        <p class="s-lead fx d2">「八丁味噌紙」を皮切りに、全国各地の地域資源を活かした紙づくり「地元の銘紙プロジェクト」を展開。これからの時代に必要な価値を<em class="accent">かたどり</em>続けます。</p>
+        <p class="vision__next fx d3">岡崎から、次の100年へ。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 15 CLOSING ===== -->
+  <section class="slide slide--dark grain closing" data-theme="dark">
+    <div class="sky" aria-hidden="true"></div>
+    <div class="spot" aria-hidden="true"></div>
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+    <div class="slide__inner closing">
+      <div class="closing__logo fx"><img src="images/logo_white.png" alt="株式会社岡田印刷"></div>
+      <h2 class="closing__title fx d1">価値を、<br>一緒にかたどりませんか。</h2>
+      <div class="closing__contact fx d2">
+        <div>TEL<b>0564-21-7151</b></div>
+        <div>所在地<b style="font-size:1.25rem">愛知県岡崎市板屋町2番地</b></div>
+        <div>WEB<b style="font-size:1.25rem">okada-printing.com</b></div>
+      </div>
+      <div class="closing__thanks fx d3">THANK YOU ・ ご清聴ありがとうございました</div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function(){
+  const deck   = document.getElementById('deck');
+  const slides = Array.from(deck.querySelectorAll('.slide'));
+  const dotsEl = document.getElementById('dots');
+  const progress = document.getElementById('progress');
+  const curEl  = document.getElementById('cur');
+  const totalEl= document.getElementById('total');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine   = window.matchMedia('(pointer: fine)').matches && !reduce;
+  let current = 0;
+
+  totalEl.textContent = '/ ' + String(slides.length).padStart(2,'0');
+
+  slides.forEach((s,i)=>{
+    const b = document.createElement('button');
+    b.setAttribute('aria-label', (i+1)+'枚目へ');
+    b.addEventListener('click', ()=> go(i));
+    dotsEl.appendChild(b);
+  });
+  const dots = Array.from(dotsEl.children);
+
+  // split cover title chars (vertical stamp-in)
+  document.querySelectorAll('[data-stamp]').forEach(el=>{
+    const txt = el.textContent; el.textContent='';
+    [...txt].forEach((c,i)=>{
+      const sp=document.createElement('span');
+      sp.className='ch'; sp.textContent=c;
+      sp.style.animationDelay = (0.35 + i*0.07)+'s';
+      sp.addEventListener('animationend', ()=>{
+        sp.style.animation='none';
+        sp.style.opacity='1'; sp.style.filter='none'; sp.style.transform='';
+        sp.style.transition='transform .25s ease-out';
+      });
+      el.appendChild(sp);
+    });
+  });
+
+  document.querySelectorAll('.sky').forEach(sky=>{
+    for(let i=0;i<46;i++){
+      const s=document.createElement('span');
+      s.className='twinkle';
+      const sz=1+Math.random()*2.6;
+      s.style.width=s.style.height=sz+'px';
+      s.style.top=(Math.random()*100)+'%';
+      s.style.left=(Math.random()*100)+'%';
+      s.style.animationDelay=(Math.random()*3.2)+'s';
+      sky.appendChild(s);
+    }
+  });
+
+  function setActive(i){
+    current = i;
+    slides.forEach((s,n)=> s.classList.toggle('is-active', n===i));
+    dots.forEach((d,n)=> d.classList.toggle('on', n===i));
+    curEl.textContent = String(i+1).padStart(2,'0');
+    progress.style.width = ((i)/(slides.length-1))*100 + '%';
+    const dark = slides[i].dataset.theme==='dark';
+    document.body.classList.toggle('slide-theme-dark', dark);
+    runCounters(slides[i]);
+    if(slides[i].querySelector('#confetti')) burstConfetti();
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && e.intersectionRatio>=0.55){
+        setActive(slides.indexOf(e.target));
+      }
+    });
+  }, { root:deck, threshold:[0.55,0.75] });
+  slides.forEach(s=>io.observe(s));
+
+  function go(i){
+    i = Math.max(0, Math.min(slides.length-1, i));
+    slides[i].scrollIntoView({ behavior: reduce?'auto':'smooth' });
+  }
+
+  function runCounters(slide){
+    slide.querySelectorAll('[data-count]').forEach(el=>{
+      if(el.dataset.done) return;
+      el.dataset.done='1';
+      const target = +el.dataset.count;
+      const dur = +(el.dataset.dur||1200);
+      const fmt = (v)=> el.dataset.raw ? String(v) : v.toLocaleString();
+      if(reduce){ el.textContent=fmt(target); return; }
+      const start = performance.now();
+      const from = +(el.textContent.replace(/[^0-9]/g,''))||0;
+      (function tick(t){
+        const p = Math.min(1,(t-start)/dur);
+        const e = 1-Math.pow(1-p,3);
+        el.textContent = fmt(Math.round(from+(target-from)*e));
+        if(p<1) requestAnimationFrame(tick);
+      })(start);
+    });
+  }
+
+  let confettiDone=false;
+  function burstConfetti(){
+    if(confettiDone||reduce) return; confettiDone=true;
+    const box=document.getElementById('confetti');
+    const colors=['#B88A44','#D9B873','#2F6B4F','#1E5080','#F7F5EF'];
+    for(let i=0;i<90;i++){
+      const p=document.createElement('i');
+      p.style.left=(Math.random()*100)+'%';
+      p.style.background=colors[i%colors.length];
+      p.style.animationDuration=(2.6+Math.random()*2.6)+'s';
+      p.style.animationDelay=(Math.random()*1.2)+'s';
+      p.style.transform='rotate('+(Math.random()*360)+'deg)';
+      p.style.opacity=(0.55+Math.random()*0.4).toFixed(2);
+      if(Math.random()>0.5) p.style.borderRadius='50%';
+      box.appendChild(p);
+    }
+  }
+
+  window.addEventListener('keydown',(e)=>{
+    if(['ArrowDown','ArrowRight','PageDown',' '].includes(e.key)){ e.preventDefault(); go(current+1); }
+    else if(['ArrowUp','ArrowLeft','PageUp'].includes(e.key)){ e.preventDefault(); go(current-1); }
+    else if(e.key==='Home'){ e.preventDefault(); go(0); }
+    else if(e.key==='End'){ e.preventDefault(); go(slides.length-1); }
+    else if(e.key==='f'||e.key==='F'){ toggleFs(); }
+  });
+
+  document.getElementById('next').addEventListener('click',()=>go(current+1));
+  document.getElementById('prev').addEventListener('click',()=>go(current-1));
+
+  function toggleFs(){
+    if(!document.fullscreenElement){ document.documentElement.requestFullscreen?.(); }
+    else { document.exitFullscreen?.(); }
+  }
+  document.getElementById('fs').addEventListener('click', toggleFs);
+
+  /* ════════ CURSOR GIMMICKS ════════ */
+
+  window.addEventListener('mousemove',(e)=>{
+    document.documentElement.style.setProperty('--mx', e.clientX+'px');
+    document.documentElement.style.setProperty('--my', e.clientY+'px');
+  },{passive:true});
+
+  // 型押しスタンプ
+  if(!reduce){
+    const kanji=['象','模','型','印'];
+    window.addEventListener('click',(e)=>{
+      if(e.target.closest?.('button, a, .dots')) return;
+      const d=document.createElement('div');
+      d.className='seal';
+      d.textContent=kanji[(Math.random()*kanji.length)|0];
+      d.style.left=e.clientX+'px';
+      d.style.top =e.clientY+'px';
+      d.style.setProperty('--rot',(Math.random()*16-8).toFixed(1)+'deg');
+      document.body.appendChild(d);
+      setTimeout(()=>d.remove(),1600);
+    });
+  }
+
+  if(fine){
+    document.documentElement.classList.add('custom-cursor');
+
+    const dot=document.createElement('div'); dot.className='cur-dot';
+    const ring=document.createElement('div'); ring.className='cur-ring';
+    document.body.append(ring,dot);
+    let mx=-100,my=-100,rx=-100,ry=-100;
+    window.addEventListener('mousemove',(e)=>{
+      mx=e.clientX; my=e.clientY;
+      dot.style.opacity='1'; ring.style.opacity='1';
+    },{passive:true});
+    document.documentElement.addEventListener('mouseleave',()=>{
+      dot.style.opacity='0'; ring.style.opacity='0';
+    });
+    window.addEventListener('mouseover',(e)=>{
+      ring.classList.toggle('hover', !!e.target.closest?.('a,button,.kd,.tilt'));
+    });
+
+    const cv=document.getElementById('fx-canvas');
+    const ctx=cv.getContext('2d');
+    let W,H; const DPR=Math.min(2,window.devicePixelRatio||1);
+    function rs(){ W=innerWidth; H=innerHeight;
+      cv.width=W*DPR; cv.height=H*DPR;
+      cv.style.width=W+'px'; cv.style.height=H+'px';
+      ctx.setTransform(DPR,0,0,DPR,0,0); }
+    rs(); window.addEventListener('resize',rs);
+    const ps=[]; let lx=0,ly=0,started=false;
+    const palLight=['#B88A44','#123B63','#2F6B4F','#C73E3A'];
+    const palDark =['#D9B873','#E6C68A','#FFFFFF'];
+    function spawn(x,y,n,sp){
+      const pal=document.body.classList.contains('slide-theme-dark')?palDark:palLight;
+      for(let i=0;i<n;i++){
+        if(ps.length>220) ps.shift();
+        const a=Math.random()*Math.PI*2, v=(.3+Math.random()*1.2)*sp;
+        ps.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-.4,life:1,
+          dec:.012+Math.random()*.02, s:1.5+Math.random()*3,
+          r:Math.random()*Math.PI, vr:(Math.random()-.5)*.2,
+          c:pal[(Math.random()*pal.length)|0], rect:Math.random()>.45});
+      }
+    }
+    window.addEventListener('mousemove',(e)=>{
+      if(!started || Math.hypot(e.clientX-lx,e.clientY-ly)>9){
+        started=true; lx=e.clientX; ly=e.clientY;
+        spawn(e.clientX,e.clientY,2,.6);
+      }
+    },{passive:true});
+    window.addEventListener('click',(e)=>{
+      if(e.target.closest?.('button')) return;
+      spawn(e.clientX,e.clientY,16,2.4);
+    });
+
+    const chs=Array.from(document.querySelectorAll('.cover__vtitle .ch'));
+
+    (function loop(){
+      rx+=(mx-rx)*.16; ry+=(my-ry)*.16;
+      dot.style.left=mx+'px'; dot.style.top=my+'px';
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      ctx.clearRect(0,0,W,H);
+      for(let i=ps.length-1;i>=0;i--){
+        const p=ps[i];
+        p.x+=p.vx; p.y+=p.vy; p.vy+=.015; p.r+=p.vr; p.life-=p.dec;
+        if(p.life<=0){ ps.splice(i,1); continue; }
+        ctx.globalAlpha=Math.max(0,p.life)*.85;
+        ctx.fillStyle=p.c;
+        if(p.rect){ ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
+          ctx.fillRect(-p.s/2,-p.s*.75,p.s,p.s*1.5); ctx.restore(); }
+        else{ ctx.beginPath(); ctx.arc(p.x,p.y,p.s*.5,0,7); ctx.fill(); }
+      }
+      ctx.globalAlpha=1;
+      if(current===0){
+        for(const ch of chs){
+          if(ch.style.animation!=='none') continue;
+          const r=ch.getBoundingClientRect();
+          const cx=r.left+r.width/2, cy=r.top+r.height/2;
+          const dx=cx-mx, dy=cy-my, d=Math.hypot(dx,dy), R=180;
+          if(d<R && d>0.01){
+            const f=1-d/R, k=f*f*26;
+            ch.style.transform='translate('+(dx/d*k).toFixed(1)+'px,'+(dy/d*k).toFixed(1)+'px) '+
+              'rotate('+((dx>0?1:-1)*f*5).toFixed(1)+'deg) scale('+(1+f*.08).toFixed(3)+')';
+          } else if(ch.style.transform){ ch.style.transform=''; }
+        }
+      }
+      requestAnimationFrame(loop);
+    })();
+
+    document.querySelectorAll('.tilt').forEach(el=>{
+      el.addEventListener('mousemove',(e)=>{
+        const r=el.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        const base=el.style.getPropertyValue('--tilt-base')||'';
+        el.style.transform='perspective(900px) rotateY('+(x*10).toFixed(2)+'deg) rotateX('+(-y*10).toFixed(2)+'deg) translateY(-4px) '+base;
+      });
+      el.addEventListener('mouseleave',()=>{ el.style.transform=''; });
+    });
+  }
+
+  setActive(0);
+})();
+</script>
+</body>
+</html>
