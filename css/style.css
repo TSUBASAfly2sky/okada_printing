@@ -1827,14 +1827,6 @@ h1, h2, h3, h4 {
   letter-spacing: 0.08em;
 }
 
-.form-optional {
-  font-size: 0.65rem;
-  color: var(--text-secondary);
-  border: 1px solid var(--border);
-  padding: 0.15rem 0.4rem;
-  letter-spacing: 0.08em;
-}
-
 .form-input,
 .form-select,
 .form-textarea {
